@@ -1,0 +1,4 @@
+# ditambah oleh push.js
+.env
+kafa-db.json
+*.db.json
