@@ -1,0 +1,220 @@
+/* ==========================================================================
+   hero.css — hero utama KAFAI As-Syariff
+   Tiada foto sekolah dalam data awam; identiti dibina daripada lencana,
+   motto dan fakta ringkas yang disahkan.
+   ========================================================================== */
+
+.hero-home {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 230, 0, 0.22), transparent 34%),
+    radial-gradient(circle at 8% 92%, rgba(255, 255, 255, 0.10), transparent 38%),
+    linear-gradient(125deg, #082f1d 0%, var(--c-primary-dark) 42%, var(--c-primary) 100%);
+  border-top: 4px solid var(--c-gold);
+  border-bottom: 4px solid var(--c-gold);
+}
+
+.hero-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, rgba(255, 230, 0, 0.06) 25%, transparent 25%, transparent 75%, rgba(255, 230, 0, 0.06) 75%),
+    linear-gradient(45deg, rgba(255, 230, 0, 0.06) 25%, transparent 25%, transparent 75%, rgba(255, 230, 0, 0.06) 75%);
+  background-size: 72px 72px;
+  background-position: 0 0, 36px 36px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero-home__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
+  gap: clamp(1.5rem, 3vw, 3.5rem);
+  align-items: center;
+  padding-block: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+}
+
+.hero-home__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(255, 230, 0, 0.55);
+  border-radius: 999px;
+  background: rgba(255, 230, 0, 0.10);
+  color: var(--c-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-home h1 {
+  color: #fff;
+  font-size: clamp(2rem, 1.45rem + 2.6vw, 3.35rem);
+  line-height: 1.12;
+  margin-bottom: 0.9rem;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+
+.hero-home__motto {
+  margin: 0;
+  color: var(--c-gold);
+  font-family: var(--font-arabic);
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.2rem);
+  line-height: 1.4;
+}
+
+.hero-home__rumi {
+  margin: 0 0 1rem;
+  color: #fff3a3;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-home__lead {
+  max-width: 62ch;
+  margin-bottom: 1.5rem;
+  color: #dcefe3;
+  font-size: clamp(1rem, 0.96rem + 0.25vw, 1.1rem);
+}
+
+.hero-home .btn--light {
+  background: #fff;
+  color: var(--c-primary-dark);
+}
+
+.hero-home .btn--gold {
+  background: var(--c-gold);
+  color: #1d2a22;
+  border-color: var(--c-gold);
+}
+
+.hero-home__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-home__facts li {
+  margin: 0;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.16);
+  color: #e7f5ec;
+  font-size: 0.8rem;
+}
+
+.hero-home__facts strong {
+  color: var(--c-gold);
+}
+
+.hero-home__emblem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-home__emblem-inner {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 330px);
+  aspect-ratio: 1;
+  padding: 1.25rem;
+  border: 2px solid rgba(255, 230, 0, 0.75);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #f2f8f4 62%, #e3efe7 100%);
+  box-shadow:
+    0 0 0 10px rgba(255, 230, 0, 0.14),
+    0 0 0 22px rgba(255, 230, 0, 0.06),
+    0 26px 60px rgba(0, 0, 0, 0.28);
+}
+
+.hero-home__emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-home__emblem-caption {
+  position: absolute;
+  bottom: -2.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 90%;
+  margin: 0;
+  color: #bfe0cb;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hero-home__scroll {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #cfe7d7;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-home__scroll span {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.45rem;
+}
+
+@media (max-width: 900px) {
+  .hero-home__inner {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero-home__emblem {
+    order: -1;
+    justify-content: flex-start;
+  }
+
+  .hero-home__emblem-inner {
+    width: 190px;
+  }
+
+  .hero-home__scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-home__emblem-inner {
+    width: 148px;
+  }
+
+  .hero-home__motto {
+    font-size: 1.5rem;
+  }
+}

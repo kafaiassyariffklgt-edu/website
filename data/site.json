@@ -1,0 +1,49 @@
+{
+  "organisasi": {
+    "nama": "KAFA Integrasi As-Syariff Telok Datok",
+    "nama_penuh": "Kelas Al-Quran dan Fardu Ain Integrasi As-Syariff",
+    "nama_inggeris": "Integrated Quran and Fardhu Ain Class",
+    "motto": "علمو سينر هيدوڤ",
+    "motto_rumi": "Ilmu Sinar Hidup",
+    "cawangan": "Telok Datok · Banting · Kuala Langat",
+    "ringkas": "Sekolah KAFA Integrasi sesi petang di Telok Datok, Banting, Kuala Langat — mendidik murid dalam Al-Quran, fardu ain, bahasa Arab, Jawi dan akhlak mengikut kurikulum KAFA JAKIM."
+  },
+  "hubungi": {
+    "alamat": [
+      "Telok Datok,",
+      "42700 Banting,",
+      "Selangor"
+    ],
+    "alamat_satu_baris": "Telok Datok, 42700 Banting, Selangor",
+    "penanda_aras": "Telok Datok, Banting · bersebelahan bangunan JKR dan Jabatan Perhutanan",
+    "telefon": "013-665 6964",
+    "telefon_href": "+60136656964",
+    "whatsapp": "https://wa.me/60136656964",
+    "emel": "kafaiassyariff.klgt@gmail.com",
+    "waktu": "Sesi petang: sekitar 12.30 tengah hari – 5.30 petang",
+    "waktu_nota": "Waktu pejabat belum disahkan · Isnin–Jumaat",
+    "waktu_penuh": [
+      { "hari": "Isnin – Jumaat", "masa": "Sesi persekolahan petang", "buka": true },
+      { "hari": "Sabtu – Ahad", "masa": "Tutup", "buka": false }
+    ],
+    "waktu_sumber": "Profil sekolah (SIMPENI) dan rekod sekolah; waktu pejabat belum disahkan.",
+    "peta": "https://www.google.com/maps/search/?api=1&query=KAFAI+As-Syarif+Telok+Datok+Banting"
+  },
+  "media_sosial": {
+    "facebook": {
+      "url": "https://www.facebook.com/pentadbiran.kafaiassyariff/",
+      "label": "Facebook pentadbiran KAFAI As-Syariff",
+      "ringkas": "Facebook"
+    },
+    "whatsapp": {
+      "url": "https://wa.me/60136656964",
+      "label": "WhatsApp KAFAI As-Syariff",
+      "ringkas": "WhatsApp"
+    }
+  },
+  "pautan_lain": {
+    "linktree": "https://linktr.ee/KAFAIASTD"
+  },
+  "pengumuman": "Maklumat sekolah, kurikulum, program dan saluran rasmi KAFAI As-Syariff Telok Datok.",
+  "status": "draf"
+}

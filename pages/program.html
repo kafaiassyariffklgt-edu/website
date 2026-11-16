@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Program Sekolah | KAFAI As-Syariff (draf)</title>
+  <meta name="description" content="Kalendar program dan aktiviti KAFA Integrasi As-Syariff Telok Datok: majlis, mesyuarat, kursus, peperiksaan dan aktiviti sekolah.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#137a4a">
+  <link rel="icon" href="../assets/img/favicon-kafa.png" sizes="64x64" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/logo-kafa-180.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="module" src="../js/main.js"></script>
+</head>
+<body class="page-program">
+  <a class="skip-link" href="#main">Langkau ke kandungan</a>
+
+  <div class="draft-banner" role="note">
+    <div class="container draft-banner__inner">
+      <strong>Draf</strong>
+      <span>Program berstatus “Cadangan” belum disahkan. Butiran masa, tempat dan kehadiran
+        hanya dipaparkan jika ada dalam data awam.</span>
+    </div>
+  </div>
+
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Jejak navigasi">
+          <ol>
+            <li><a href="../index.html">Utama</a></li>
+            <li><span aria-current="page">Program</span></li>
+          </ol>
+        </nav>
+        <h1>Program Sekolah</h1>
+        <p>Kalendar majlis, mesyuarat, kursus, peperiksaan dan aktiviti sepanjang sesi.</p>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="notice" role="note">
+        <strong>Kalendar berkurasi.</strong> Program disusun daripada kalendar sekolah dalam
+        data awam. Halaman ini tidak menyimpan senarai kehadiran atau maklumat peribadi murid.
+      </div>
+
+      <div id="aktiviti-index">
+        <h2 class="section__title">Senarai program</h2>
+        <p class="section__lead">Tapis mengikut kategori atau buka butiran program untuk
+          keterangan penuh.</p>
+
+        <div class="chips" id="aktiviti-filter" aria-label="Penapis kategori program"></div>
+        <p class="card__meta" data-aktiviti-count aria-live="polite"></p>
+        <noscript>
+          <p class="empty">JavaScript diperlukan untuk membaca kalendar program. Senarai penuh
+            juga boleh diminta melalui saluran rasmi sekolah.</p>
+        </noscript>
+        <div class="activity-grid" id="aktiviti-list" aria-busy="true"></div>
+      </div>
+
+      <div id="aktiviti-detail" hidden></div>
+
+      <div class="source-note">
+        <p><strong>Sumber.</strong> Kalendar program sekolah (data awam). Program yang belum
+          disahkan ditandakan sebagai cadangan dan tidak boleh dianggap sebagai acara rasmi.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

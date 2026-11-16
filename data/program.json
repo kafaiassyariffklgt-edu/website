@@ -1,0 +1,15 @@
+[
+{"id":1,"tarikh":"2026-11-16","tajuk":"Raptai Khatam","kategori":"Majlis"},
+{"id":2,"tarikh":"2026-11-17","tajuk":"Majlis Khatam","kategori":"Majlis"},
+{"id":3,"tarikh":"2026-11-18","tajuk":"Mesyuarat Guru Kali Ke-3","kategori":"Mesyuarat"},
+{"id":4,"tarikh":"2026-11-19","tajuk":"PSRA Umum","kategori":"Peperiksaan"},
+{"id":5,"tarikh":"2026-11-20","tajuk":"Majlis Penyerahan Keputusan PSRA","kategori":"Majlis"},
+{"id":6,"tarikh":"2026-11-23","tajuk":"Kursus Pembugaran 1","kategori":"Kursus"},
+{"id":7,"tarikh":"2026-11-24","tajuk":"Kursus Pembugaran 2","kategori":"Kursus"},
+{"id":8,"tarikh":"2026-11-26","tajuk":"Hari Komunikasi UASA","kategori":"Murid & Ibu Bapa","catatan":"Penyerahan laporan UASA 2026 kepada ibu bapa / penjaga"},
+{"id":9,"tarikh":"2026-12-01","tajuk":"Jamuan Akhir Tahun","kategori":"Majlis","cadangan":true},
+{"id":10,"tarikh":"2026-12-02","tajuk":"HKM","kategori":"Majlis"},
+{"id":11,"tarikh":"2026-12-03","tajuk":"Gotong-royong","kategori":"Aktiviti"},
+{"id":12,"tarikh":"2026-12-04","tajuk":"Hari Terakhir Persekolahan","kategori":"Sekolah"},
+{"id":13,"tarikh":"2026-12-07","tajuk":"Lawatan","kategori":"Aktiviti"}
+]

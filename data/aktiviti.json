@@ -1,0 +1,154 @@
+[
+  {
+    "id": 1,
+    "slug": "raptai-khatam-2026",
+    "tarikh": "2026-11-16",
+    "tajuk": "Raptai Khatam",
+    "kategori": "Majlis",
+    "status": "disahkan",
+    "ringkas": "Raptai persiapan Majlis Khatam sekolah.",
+    "caption": "Program raptai persiapan Majlis Khatam. Butiran masa dan tempat belum disahkan dalam data awam.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 2,
+    "slug": "majlis-khatam-2026",
+    "tarikh": "2026-11-17",
+    "tajuk": "Majlis Khatam",
+    "kategori": "Majlis",
+    "status": "disahkan",
+    "sorotan": 1,
+    "laporan": "pages/program.html?slug=majlis-khatam-2026",
+    "ringkas": "Majlis khatam bacaan Al-Quran murid, selepas raptai pada 16 November 2026.",
+    "caption": "Majlis Khatam merupakan program rasmi dalam kalendar sekolah. Butiran masa, tempat dan kehadiran belum disahkan dalam data awam.",
+    "gambar": [
+      {
+        "src": "assets/img/sorotan/majlis-khatam-2026.svg",
+        "alt": "Poster grafik Majlis Khatam 2026 dengan lencana KAFAI As-Syariff Telok Datok.",
+        "kapsyen": "Poster grafik Majlis Khatam 2026 — KAFAI As-Syariff Telok Datok."
+      }
+    ],
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 3,
+    "slug": "mesyuarat-guru-kali-3-2026",
+    "tarikh": "2026-11-18",
+    "tajuk": "Mesyuarat Guru Kali Ke-3",
+    "kategori": "Mesyuarat",
+    "status": "disahkan",
+    "ringkas": "Mesyuarat guru kali ketiga bagi sesi 2026.",
+    "caption": "Mesyuarat dalaman guru. Butiran agenda dan minit mesyuarat tidak disiarkan di laman awam.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 4,
+    "slug": "psra-umum-2026",
+    "tarikh": "2026-11-19",
+    "tajuk": "PSRA Umum",
+    "kategori": "Peperiksaan",
+    "status": "disahkan",
+    "ringkas": "PSRA Umum mengikut kalendar pentaksiran sekolah.",
+    "caption": "Pentaksiran PSRA Umum. Tiada markah atau maklumat murid dipaparkan di laman awam.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 5,
+    "slug": "majlis-penyerahan-keputusan-psra-2026",
+    "tarikh": "2026-11-20",
+    "tajuk": "Majlis Penyerahan Keputusan PSRA",
+    "kategori": "Majlis",
+    "status": "disahkan",
+    "ringkas": "Majlis penyerahan keputusan PSRA kepada pihak berkaitan.",
+    "caption": "Majlis penyerahan keputusan PSRA. Keputusan individu murid tidak disiarkan di laman awam.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 6,
+    "slug": "kursus-pembugaran-1-2026",
+    "tarikh": "2026-11-23",
+    "tajuk": "Kursus Pembugaran 1",
+    "kategori": "Kursus",
+    "status": "disahkan",
+    "ringkas": "Kursus pembugaran guru, siri pertama.",
+    "caption": "Kursus pembugaran untuk guru. Butiran penceramah dan tempat belum disahkan dalam data awam.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 7,
+    "slug": "kursus-pembugaran-2-2026",
+    "tarikh": "2026-11-24",
+    "tajuk": "Kursus Pembugaran 2",
+    "kategori": "Kursus",
+    "status": "disahkan",
+    "ringkas": "Kursus pembugaran guru, siri kedua.",
+    "caption": "Kursus pembugaran untuk guru. Butiran penceramah dan tempat belum disahkan dalam data awam.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 8,
+    "slug": "hari-komunikasi-uasa-2026",
+    "tarikh": "2026-11-26",
+    "tajuk": "Hari Komunikasi UASA",
+    "kategori": "Murid & Ibu Bapa",
+    "status": "disahkan",
+    "ringkas": "Penyerahan laporan UASA 2026 kepada ibu bapa atau penjaga.",
+    "caption": "Hari komunikasi antara sekolah dan ibu bapa / penjaga bagi penyerahan laporan UASA 2026. Laporan individu tidak disiarkan di laman awam.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 9,
+    "slug": "jamuan-akhir-tahun-2026",
+    "tarikh": "2026-12-01",
+    "tajuk": "Jamuan Akhir Tahun",
+    "kategori": "Majlis",
+    "status": "draf",
+    "ringkas": "Cadangan jamuan akhir tahun sekolah.",
+    "caption": "Tarikh cadangan. Belum disahkan sebagai program rasmi.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 10,
+    "slug": "hkm-2026",
+    "tarikh": "2026-12-02",
+    "tajuk": "HKM",
+    "kategori": "Majlis",
+    "status": "disahkan",
+    "ringkas": "Program HKM mengikut kalendar sekolah.",
+    "caption": "Program HKM. Butiran penuh belum disahkan dalam data awam.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 11,
+    "slug": "gotong-royong-2026",
+    "tarikh": "2026-12-03",
+    "tajuk": "Gotong-royong",
+    "kategori": "Aktiviti",
+    "status": "disahkan",
+    "ringkas": "Aktiviti gotong-royong sekolah.",
+    "caption": "Aktiviti gotong-royong. Butiran masa dan lokasi belum disahkan dalam data awam.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 12,
+    "slug": "hari-terakhir-persekolahan-2026",
+    "tarikh": "2026-12-04",
+    "tajuk": "Hari Terakhir Persekolahan",
+    "kategori": "Sekolah",
+    "status": "disahkan",
+    "ringkas": "Hari terakhir persekolahan bagi sesi 2026.",
+    "caption": "Hari terakhir persekolahan mengikut kalendar sekolah.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  },
+  {
+    "id": 13,
+    "slug": "lawatan-2026",
+    "tarikh": "2026-12-07",
+    "tajuk": "Lawatan",
+    "kategori": "Aktiviti",
+    "status": "disahkan",
+    "ringkas": "Lawatan sekolah mengikut kalendar program.",
+    "caption": "Program lawatan. Destinasi dan butiran lain belum disahkan dalam data awam.",
+    "sumber": "Kalendar program sekolah (data awam)."
+  }
+]

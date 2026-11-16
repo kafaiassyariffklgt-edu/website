@@ -1,0 +1,21 @@
+{
+  "dikemaskini": "2026-11-16",
+  "sumber": "Papan pergerakan guru bertarikh 20 Julai 2026 dan enrolmen kelas pada 16 November 2026 (agregat awam sahaja).",
+  "tahunDitubuhkan": "sekitar 2000",
+  "bangunanSendiri": 2007,
+  "kodJakim": "BYT1005",
+  "status": "Berdaftar",
+  "sesi": "Petang",
+  "asrama": "Tiada",
+  "kelas": 6,
+  "murid": {
+    "jumlah": 181,
+    "lelaki": 98,
+    "perempuan": 83,
+    "nota": "Jumlah enrolmen daripada enam kelas pada 16 November 2026. Papan catatan harian mencatat 180 murid; perbezaan satu murid belum diselesaikan."
+  },
+  "guru": 8,
+  "mataPelajaran": 11,
+  "program": 13,
+  "nota": "Statistik agregat sahaja. Tiada nama, nombor kad pengenalan, markah, kehadiran atau rekod disiplin murid disiarkan. Status kehadiran dan cuti guru juga tidak disiarkan."
+}

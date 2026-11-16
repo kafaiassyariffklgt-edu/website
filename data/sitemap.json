@@ -1,0 +1,18 @@
+{
+  "dikemaskini": "2026-11-16",
+  "halaman": [
+    { "url": "/", "tajuk": "Utama", "keterangan": "Laman utama KAFAI As-Syariff Telok Datok." },
+    { "url": "/pages/tentang.html", "tajuk": "Tentang Sekolah", "keterangan": "Profil, sejarah, motto, status pendaftaran dan statistik sekolah." },
+    { "url": "/pages/kepimpinan.html", "tajuk": "Kepimpinan", "keterangan": "Guru Besar, JPK, guru, guru ganti dan jawatankuasa terdahulu." },
+    { "url": "/pages/kurikulum.html", "tajuk": "Kurikulum", "keterangan": "Mata pelajaran, tahap penguasaan, UPKK, pentaksiran dan catatan Tahfiz." },
+    { "url": "/pages/program.html", "tajuk": "Program", "keterangan": "Kalendar program sekolah daripada data awam." },
+    { "url": "/pages/pencapaian.html", "tajuk": "Pencapaian", "keterangan": "Dasar paparan pencapaian, pentaksiran dan status rekod." },
+    { "url": "/pages/kokurikulum.html", "tajuk": "Kokurikulum", "keterangan": "Program sahsiah dan status senarai unit kokurikulum." },
+    { "url": "/pages/prasarana.html", "tajuk": "Prasarana", "keterangan": "Bangunan sendiri sejak 2007, lokasi dan status maklumat kemudahan." },
+    { "url": "/pages/hubungi.html", "tajuk": "Hubungi", "keterangan": "Alamat, telefon, emel, peta dan saluran rasmi." },
+    { "url": "/pages/bahan-bacaan.html", "tajuk": "Bahan Bacaan", "keterangan": "Rak buku dan bahan bacaan digital." },
+    { "url": "/pages/jaringan.html", "tajuk": "Jaringan", "keterangan": "Rujukan agensi dan pautan rasmi." },
+    { "url": "/pages/berita.html", "tajuk": "Berita", "keterangan": "Indeks berita dan pengumuman sekolah." },
+    { "url": "/pages/tetapan.html", "tajuk": "Tetapan", "keterangan": "Pilihan paparan dan ringkasan data laman." }
+  ]
+}

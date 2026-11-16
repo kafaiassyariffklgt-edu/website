@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tetapan Paparan | KAFAI As-Syariff (draf)</title>
+  <meta name="description" content="Pilihan saiz teks dan gerakan untuk laman KAFA Integrasi As-Syariff Telok Datok. Pilihan disimpan pada peranti anda sahaja.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#137a4a">
+  <link rel="icon" href="../assets/img/favicon-kafa.png" sizes="64x64" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/logo-kafa-180.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="module" src="../js/main.js"></script>
+</head>
+<body class="page-tetapan">
+  <a class="skip-link" href="#main">Langkau ke kandungan</a>
+
+  <div class="draft-banner" role="note">
+    <div class="container draft-banner__inner">
+      <strong>Tetapan</strong>
+      <span>Pilihan paparan disimpan dalam pelayar anda sahaja. Tiada data dihantar ke
+        pelayan.</span>
+    </div>
+  </div>
+
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Jejak navigasi">
+          <ol>
+            <li><a href="../index.html">Utama</a></li>
+            <li><span aria-current="page">Tetapan</span></li>
+          </ol>
+        </nav>
+        <h1>Tetapan Paparan</h1>
+        <p>Saiz teks dan gerakan untuk keselesaan membaca. Pilihan kekal pada peranti ini.</p>
+      </div>
+    </section>
+
+    <section class="container section" data-tetapan>
+      <div class="pilihan-grid">
+        <article class="pilihan-card">
+          <h2>Saiz teks</h2>
+          <p>Pilih saiz asas teks. Pilihan ini menukar skala tipografi seluruh laman.</p>
+          <div class="pilihan-group" role="group" aria-label="Pilih saiz teks">
+            <button type="button" class="pilihan-choice" data-teks="biasa" aria-pressed="true">
+              Biasa
+            </button>
+            <button type="button" class="pilihan-choice" data-teks="besar" aria-pressed="false">
+              Besar
+            </button>
+            <button type="button" class="pilihan-choice" data-teks="besaran" aria-pressed="false">
+              Besaran
+            </button>
+          </div>
+          <p class="pilihan-note">Saiz besar sesuai untuk bacaan mudah alih; saiz besaran
+            membantu pembaca yang memerlukan teks lebih besar.</p>
+        </article>
+
+        <article class="pilihan-card">
+          <h2>Gerakan</h2>
+          <p>Kurangkan animasi, peralihan dan kesan gerakan pada laman.</p>
+          <button type="button" class="pilihan-switch" data-gerakan aria-pressed="false">
+            <span class="pilihan-switch__text">
+              <strong>Kurangkan gerakan</strong>
+              <span>Hentikan slaid automatik dan peralihan bila mungkin.</span>
+            </span>
+            <span class="pilihan-switch__track" aria-hidden="true"></span>
+          </button>
+          <p class="field__hint" style="margin-top:.75rem">
+            Status: <strong data-gerakan-label>Mati</strong>
+          </p>
+          <p class="pilihan-note">Pelayar juga menghormati tetapan “kurangkan gerakan” pada
+            sistem pengendalian anda.</p>
+        </article>
+
+        <article class="pilihan-card">
+          <h2>Ringkasan pilihan</h2>
+          <p>Semakan pantas tetapan yang sedang digunakan.</p>
+          <table class="pilihan-data">
+            <tbody>
+              <tr>
+                <th scope="row">Saiz teks</th>
+                <td data-semasa-teks>Biasa</td>
+              </tr>
+              <tr>
+                <th scope="row">Gerakan</th>
+                <td data-semasa-gerakan>Biasa</td>
+              </tr>
+              <tr>
+                <th scope="row">Simpanan</th>
+                <td>localStorage pelayar</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pilihan-actions">
+            <button type="button" class="btn btn--ghost btn--sm" data-tetapan-reset>
+              Tetapkan semula
+            </button>
+            <a class="btn btn--sm" href="../index.html">Kembali ke utama</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="tetapan-status" data-tetapan-status role="status" aria-live="polite"></p>
+
+      <div class="notice" role="note" style="margin-top:1.5rem">
+        <strong>Privasi.</strong> Pilihan disimpan pada peranti anda menggunakan kunci
+        <code>kafai:pilihan:v1</code>. Tiada nama, e-mel atau data murid dikumpul. Kosongkan
+        storan pelayar atau tekan “Tetapkan semula” untuk memadam pilihan.
+      </div>
+
+      <div class="source-note">
+        <p><strong>Nota teknikal.</strong> Jika storan pelayar disekat, pilihan hanya kekal
+          untuk halaman semasa. Laman ini tidak menggunakan kuki atau analitik.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="maklumat-laman-title">
+      <div class="container">
+        <h2 class="section__title" id="maklumat-laman-title">Maklumat laman</h2>
+        <div class="table-wrap">
+          <table class="data-table data-table--compact">
+            <caption>Status ringkas laman draf</caption>
+            <tbody>
+              <tr>
+                <th scope="row">Status penerbitan</th>
+                <td>Draf · <code>noindex, nofollow</code></td>
+              </tr>
+              <tr>
+                <th scope="row">Tarikh semakan data</th>
+                <td>16 November 2026</td>
+              </tr>
+              <tr>
+                <th scope="row">Sumber data awam</th>
+                <td>Profil sekolah, rekod guru dan kalendar program KAFA</td>
+              </tr>
+              <tr>
+                <th scope="row">Data murid</th>
+                <td>Tidak disimpan dalam laman awam</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+/* ==========================================================================
+   style.css — titik masuk CSS
+   ========================================================================== */
+
+@import "variables.css";
+@import "motion.css";
+@import "base.css";
+@import "layout.css";
+@import "components.css";
+@import "hero.css";
+@import "masa-solat.css";
+@import "sorotan.css";
+@import "aktiviti.css";
+@import "kepimpinan.css";
+@import "library.css";
+@import "mapbtn.css";
+@import "kandungan.css";
+@import "pilihan.css";

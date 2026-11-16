@@ -1,0 +1,70 @@
+/* ==========================================================================
+   variables.css — token reka bentuk KAFAI As-Syariff Telok Datok
+   Warna asas daripada identiti sekolah: hijau #137a4a, kuning #ffe600.
+   ========================================================================== */
+
+:root {
+  /* Warna jenama */
+  --c-primary: #137a4a;
+  --c-primary-dark: #0d5c37;
+  --c-primary-soft: #e8f5ee;
+  --c-accent: #137a4a;
+  --c-gold: #ffe600;
+  --c-brand: #1f9d5c;
+
+  /* Permukaan */
+  --c-bg: #ffffff;
+  --c-bg-alt: #f5f8f5;
+  --c-text: #1d2a22;
+  --c-text-soft: #5b6b61;
+  --c-border: #dbe4dd;
+
+  /* Topbar, masthead dan navigasi */
+  --c-topbar-bg: #f2f7f3;
+  --c-topbar-border: #d7e4da;
+  --c-masthead-bg: #ffffff;
+  --c-nav-bg: #10241a;
+  --c-nav-bg-alt: #081c12;
+  --c-nav-ink: #ffffff;
+  --c-nav-muted: #c9d2cc;
+
+  /* Footer */
+  --c-footer-bg: #06281a;
+  --c-footer-ink: #cfe0d5;
+  --c-footer-muted: #9dbfae;
+
+  /* Notis draf */
+  --c-draft-bg: #fff8d6;
+  --c-draft-border: #e0c64a;
+  --c-draft-text: #5c4a00;
+
+  /* Tipografi */
+  --font: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-head: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-arabic: "Amiri", "Noto Naskh Arabic", "Traditional Arabic", serif;
+  --fs-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --fs-h1: clamp(1.9rem, 1.4rem + 2.2vw, 3rem);
+  --fs-h2: clamp(1.45rem, 1.2rem + 1.1vw, 2.05rem);
+  --fs-h3: clamp(1.15rem, 1.05rem + 0.45vw, 1.35rem);
+  --fs-small: 0.85rem;
+
+  /* Bentuk & bayang */
+  --radius: 10px;
+  --radius-lg: 18px;
+  --shadow: 0 4px 16px rgba(8, 51, 31, 0.12);
+  --shadow-lg: 0 18px 44px rgba(8, 51, 31, 0.18);
+
+  /* Jarak & susun atur */
+  --container: 1180px;
+  --topbar-h: 38px;
+  --nav-h: 52px;
+  --prayerbar-h: 54px;
+  --header-h: calc(var(--nav-h) + var(--prayerbar-h));
+  --space: 1rem;
+  --section-y: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
+
+  /* Lain-lain */
+  --ease: cubic-bezier(0.4, 0.1, 0.2, 1);
+  --z-header: 60;
+  --z-overlay: 100;
+}

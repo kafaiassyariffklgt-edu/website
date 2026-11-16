@@ -1,0 +1,57 @@
+{
+ "mataPelajaran": [
+  "Tilawah Al-Quran",
+  "Hafazan",
+  "Tauhid",
+  "Feqah",
+  "Akhlak",
+  "Bahasa Arab",
+  "Jawi",
+  "Sirah",
+  "Imla’",
+  "Tajwid",
+  "Khat"
+ ],
+ "tahap": [
+  [
+   "1",
+   "Asasi",
+   "Murid tahu perkara asas, boleh melakukan kemahiran asas atau memberi respons terhadap perkara asas."
+  ],
+  [
+   "2",
+   "Musa’adah",
+   "Murid menunjukkan kefahaman dengan menjelaskan sesuatu perkara yang dipelajari dalam bentuk komunikasi."
+  ],
+  [
+   "3",
+   "Maqbul",
+   "Murid menunjukkan pengetahuan dan melaksanakan sesuatu kemahiran atau tugasan pada suatu situasi."
+  ],
+  [
+   "4",
+   "Jayyid",
+   "Murid menggunakan pengetahuan dan melaksanakan kemahiran atau tugasan pada situasi baharu dengan mengikut prosedur atau secara analitikal."
+  ],
+  [
+   "5",
+   "Jayyid Jiddan",
+   "Seperti tahap 4, dengan sistematik serta tekal dan bersikap positif."
+  ],
+  [
+   "6",
+   "Mumtaz",
+   "Murid berupaya menggunakan pengetahuan dan kemahiran sedia ada pada situasi baharu secara analitikal, sistematik, bersikap positif, kreatif dan inovatif dalam menghasilkan idea baharu serta boleh dicontohi."
+  ]
+ ],
+ "upkk": "Ujian Penilaian Kelas KAFA (UPKK) dilaksanakan pada Tahun 5.",
+ "sahsiah": [
+  "Kad Norma Harian Diri",
+  "Tabung Sedekah Subuh"
+ ],
+ "peperiksaan": [
+  "Ujian Pertengahan Sesi Akademik",
+  "Ujian Akhir Sesi Akademik (UASA)",
+  "Pentaksiran Bilik Darjah (tahap 1–6)"
+ ]
+}

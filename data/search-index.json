@@ -1,0 +1,93 @@
+[
+  {
+    "tajuk": "Utama",
+    "url": "index.html",
+    "jenis": "Halaman",
+    "keterangan": "Laman utama KAFAI As-Syariff Telok Datok, program seterusnya dan pautan pantas.",
+    "kata_kunci": "utama home kafa as-syariff telok datok banting kuala langat"
+  },
+  {
+    "tajuk": "Tentang Sekolah",
+    "url": "pages/tentang.html",
+    "jenis": "Halaman",
+    "keterangan": "Profil, sejarah, motto, kod JAKIM, status pendaftaran dan statistik agregat sekolah.",
+    "kata_kunci": "tentang profil sejarah motto ilmu sinar hidup byt1005 simpeni jais selangor 2000 2007 enrolmen murid kelas guru"
+  },
+  {
+    "tajuk": "Kepimpinan",
+    "url": "pages/kepimpinan.html",
+    "jenis": "Halaman",
+    "keterangan": "Guru Besar, JPK, guru, guru ganti dan jawatankuasa terdahulu 2012–2014.",
+    "kata_kunci": "kepimpinan guru besar pengetua jpk guru rakyat ganti ajk mufidah masroni siti hasma sahrudin nurul ashikin sa'doon tholhah agung biyadi murshidah tahrrir muhamad taqiyuddin aminuddin siti nor afiqah molyan muhammad aiman rafee zawalajam maryam rohaya haryati azhar khairul nizam suhaimy asiah aizul salim zalina ali fazliana yun hanimi abidin"
+  },
+  {
+    "tajuk": "Kurikulum",
+    "url": "pages/kurikulum.html",
+    "jenis": "Halaman",
+    "keterangan": "Mata pelajaran KAFA, enam tahap penguasaan, UPKK, pentaksiran dan catatan aliran Tahfiz.",
+    "kata_kunci": "kurikulum tilawah hafazan tauhid feqah akhlak bahasa arab jawi sirah imla tajwid khat upkk uasa tahfiz simpeni"
+  },
+  {
+    "tajuk": "Program Sekolah",
+    "url": "pages/program.html",
+    "jenis": "Halaman",
+    "keterangan": "Kalendar program sekolah daripada data awam, termasuk majlis, kursus dan peperiksaan.",
+    "kata_kunci": "program aktiviti kalendar majlis khatam psra uasa kursus gotong royong lawatan"
+  },
+  {
+    "tajuk": "Pencapaian",
+    "url": "pages/pencapaian.html",
+    "jenis": "Halaman",
+    "keterangan": "Dasar paparan pencapaian, pentaksiran dan status rekod. Tiada data peringkat murid diterbitkan.",
+    "kata_kunci": "pencapaian anugerah kecemerlangan upkk uasa apresiasi dasar privasi"
+  },
+  {
+    "tajuk": "Kokurikulum",
+    "url": "pages/kokurikulum.html",
+    "jenis": "Halaman",
+    "keterangan": "Program sahsiah sekolah dan status senarai unit kokurikulum rasmi.",
+    "kata_kunci": "kokurikulum sahsiah sedekah kad norma unit kelab persatuan sukan"
+  },
+  {
+    "tajuk": "Prasarana",
+    "url": "pages/prasarana.html",
+    "jenis": "Halaman",
+    "keterangan": "Bangunan sendiri sejak 2007, lokasi dan status maklumat kemudahan.",
+    "kata_kunci": "prasarana bangunan kelas surau galeri kemudahan lokasi jkr perhutanan"
+  },
+  {
+    "tajuk": "Hubungi Kami",
+    "url": "pages/hubungi.html",
+    "jenis": "Halaman",
+    "keterangan": "Alamat, telefon, WhatsApp, emel, peta dan borang demo.",
+    "kata_kunci": "hubungi telefon whatsapp emel alamat peta lokasi facebook linktree"
+  },
+  {
+    "tajuk": "Bahan Bacaan",
+    "url": "pages/bahan-bacaan.html",
+    "jenis": "Halaman",
+    "keterangan": "Rak buku digital dan bahan bacaan. Tiada fail buku diterbitkan lagi.",
+    "kata_kunci": "bahan bacaan buku pdf rak perpustakaan"
+  },
+  {
+    "tajuk": "Jaringan & Rujukan",
+    "url": "pages/jaringan.html",
+    "jenis": "Halaman",
+    "keterangan": "Pautan rasmi JAIS, JAKIM, SIMPENI, e-Solat dan UPKK.",
+    "kata_kunci": "jaringan rujukan jais jakim simpeni e-solat upkk agensi"
+  },
+  {
+    "tajuk": "Berita & Pengumuman",
+    "url": "pages/berita.html",
+    "jenis": "Halaman",
+    "keterangan": "Indeks berita dan pengumuman sekolah. Tiada berita diterbitkan lagi.",
+    "kata_kunci": "berita pengumuman arkib media"
+  },
+  {
+    "tajuk": "Tetapan Paparan",
+    "url": "pages/tetapan.html",
+    "jenis": "Halaman",
+    "keterangan": "Pilihan saiz teks, gerakan dan ringkasan data laman.",
+    "kata_kunci": "tetapan paparan saiz teks gerakan aksesibiliti data"
+  }
+]

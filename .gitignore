@@ -2,3 +2,12 @@
 .env
 kafa-db.json
 *.db.json
+
+# laporan & staging semak-perkim.ps1
+_laporan/
+_perkim-import/
+
+# nota kerja dan alat audit tempatan (bukan bahagian laman awam)
+status.txt
+semak-perkim.ps1
+Guru dan Murid terkini.txt
