@@ -17,6 +17,14 @@ function loadEnv(){
 const die=m=>{console.error('\n❌ '+m);process.exit(1)};
 const E=loadEnv();
 for(const k of ['GITHUB_TOKEN','GITHUB_USER','GITHUB_REPO'])if(!E[k]||/^ISI_/.test(E[k]))die(`${k} belum diisi dalam .env`);
+/* Terima nama biasa ATAU URL penuh (cth https://github.com/user/repo.git) */
+(function(){
+  const strip=s=>s.trim().replace(/^https?:\/\/github\.com\//i,'').replace(/\.git\/?$/i,'').replace(/^\/+|\/+$/g,'');
+  let u=strip(E.GITHUB_USER),r=strip(E.GITHUB_REPO);
+  if(r.includes('/')){[u,r]=r.split('/')}else if(u.includes('/')){u=u.split('/')[0]}
+  if(!/^[\w.-]+$/.test(u)||!/^[\w.-]+$/.test(r))die(`Nama pengguna/repo tidak sah: "${u}" / "${r}"`);
+  E.GITHUB_USER=u;E.GITHUB_REPO=r;
+})();
 const BRANCH=E.GITHUB_BRANCH||'main',TOKEN=E.GITHUB_TOKEN;
 const REMOTE=`https://github.com/${E.GITHUB_USER}/${E.GITHUB_REPO}.git`;
 const AUTH='Authorization: Basic '+Buffer.from('x-access-token:'+TOKEN).toString('base64');
