@@ -247,7 +247,7 @@
   border-radius: 999px;
   background: rgba(10, 16, 38, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  color: #dbe3fb;
+  color: var(--c-on-dark);
   font-size: 0.82rem;
   pointer-events: none;
   max-width: min(90vw, 520px);
@@ -263,7 +263,7 @@
   min-height: 40vh;
   padding: 2rem 1.25rem;
   text-align: center;
-  color: #dbe3fb;
+  color: var(--c-on-dark);
 }
 
 .book-error p {

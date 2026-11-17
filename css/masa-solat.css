@@ -21,7 +21,7 @@
   position: sticky;
   top: var(--nav-h);
   z-index: calc(var(--z-header) - 1);
-  border-bottom: 1px solid rgba(31, 122, 52, 0.14);
+  border-bottom: 1px solid rgba(19, 122, 74, 0.14);
   background: rgba(255, 255, 255, 0.94);
   color: var(--c-text);
   box-shadow: 0 10px 26px rgba(8, 51, 31, 0.07);
@@ -178,7 +178,7 @@
   background: var(--c-primary);
   color: #fff;
   box-shadow:
-    0 4px 14px rgba(31, 122, 52, 0.3),
+    0 4px 14px rgba(19, 122, 74, 0.3),
     0 1px 3px rgba(8, 51, 31, 0.18);
   transition:
     background-color var(--t-color) var(--ease-out),
@@ -208,14 +208,14 @@
   .prayerbar__toggle:hover .prayerbar__toggle-icon {
     background: var(--c-primary-dark);
     box-shadow:
-      0 6px 18px rgba(31, 122, 52, 0.38),
+      0 6px 18px rgba(19, 122, 74, 0.38),
       0 2px 5px rgba(8, 51, 31, 0.2);
     transform: translateY(-1px) scale(1.04);
   }
 
   .prayerbar__refresh:hover {
     background: var(--c-primary-soft);
-    border-color: rgba(31, 122, 52, 0.3);
+    border-color: rgba(19, 122, 74, 0.3);
     color: var(--c-primary);
     box-shadow: 0 6px 18px rgba(8, 51, 31, 0.1);
     transform: translateY(-1px);
@@ -243,7 +243,7 @@
 .prayerbar__details {
   position: relative;
   padding: 1rem 0 1.05rem;
-  border-top: 1px solid rgba(31, 122, 52, 0.1);
+  border-top: 1px solid rgba(19, 122, 74, 0.1);
 }
 
 .prayerbar__details-head {
@@ -272,7 +272,7 @@
   height: 8px;
   border-radius: 50%;
   background: linear-gradient(145deg, #48b75f, var(--c-primary));
-  box-shadow: 0 0 0 4px rgba(31, 122, 52, 0.1);
+  box-shadow: 0 0 0 4px rgba(19, 122, 74, 0.1);
 }
 
 .prayerbar.is-open .prayerbar__details {
@@ -336,7 +336,7 @@
   height: 6px;
   border-radius: 50%;
   background: var(--c-primary);
-  box-shadow: 0 0 0 4px rgba(31, 122, 52, 0.11);
+  box-shadow: 0 0 0 4px rgba(19, 122, 74, 0.11);
   opacity: 0;
 }
 
@@ -355,7 +355,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .prayerbar__time:hover {
-    border-color: rgba(31, 122, 52, 0.28);
+    border-color: rgba(19, 122, 74, 0.28);
     box-shadow:
       0 2px 2px rgba(8, 51, 31, 0.025),
       0 15px 30px rgba(8, 51, 31, 0.11);
@@ -410,12 +410,12 @@
 }
 
 .prayerbar__time.is-next {
-  border-color: rgba(31, 122, 52, 0.42);
+  border-color: rgba(19, 122, 74, 0.42);
   background:
     linear-gradient(145deg, rgba(236, 248, 238, 0.98), rgba(218, 239, 222, 0.92));
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.8),
-    0 10px 28px rgba(31, 122, 52, 0.14);
+    0 10px 28px rgba(19, 122, 74, 0.14);
 }
 
 .prayerbar__time.is-next::before {

@@ -107,7 +107,7 @@ html.reduce-motion *::after {
 
 /* Cincin fokus yang konsisten. */
 .m-focus:focus-visible {
-  outline: 2px solid var(--c-primary, #1f7a34);
+  outline: 3px solid var(--c-primary-dark);
   outline-offset: 3px;
   border-radius: inherit;
 }

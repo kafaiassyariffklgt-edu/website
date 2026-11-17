@@ -7,6 +7,7 @@
   /* Warna jenama */
   --c-primary: #137a4a;
   --c-primary-dark: #0d5c37;
+  --c-primary-light: #1b8650;
   --c-primary-soft: #e8f5ee;
   --c-accent: #137a4a;
   --c-gold: #ffe600;
@@ -18,6 +19,10 @@
   --c-text: #1d2a22;
   --c-text-soft: #5b6b61;
   --c-border: #dbe4dd;
+  --c-border-strong: #c9d8cb;
+
+  /* Teks di atas latar gelap (nav mudah alih, pembaca PDF) */
+  --c-on-dark: #e6f2ea;
 
   /* Topbar, masthead dan navigasi */
   --c-topbar-bg: #f2f7f3;
