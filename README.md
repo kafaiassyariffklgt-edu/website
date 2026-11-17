@@ -64,6 +64,15 @@ belum disahkan akan dijawab sebagai belum disahkan dan dirujuk kepada sekolah.
 > mana-mana fail `js/`. Jika kunci pernah terdedah, jana semula di NVIDIA sebelum
 > menerbitkan laman.
 
+### Status produksi dan pelan seterusnya
+
+Worker produksi: `https://asyariff-bot.asyariff-kafa.workers.dev`
+(`/api/chat`, `/telegram/webhook`, `/health`).
+
+Bot Telegram dan PWA kemaskini kandungan masih dalam perancangan. Status penuh,
+keputusan yang belum dibuat dan pelan pelaksanaan disimpan dalam
+[`docs/pelan-telegram-pwa.md`](docs/pelan-telegram-pwa.md).
+
 ## Remote MCP untuk Claude.ai
 
 Claude.ai (web) boleh membaca dan menulis fail projek ini melalui pelayan
