@@ -45,7 +45,7 @@
   ],
   "endpoint": {
     "localhost": "http://127.0.0.1:8787/api/chat",
-    "produksi": ""
+    "produksi": "https://asyariff-bot.asyariff-kafa.workers.dev/api/chat"
   },
   "whatsapp": "https://wa.me/60136656964",
   "telegram": ""
