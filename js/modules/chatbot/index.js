@@ -51,7 +51,12 @@ export async function initChatbot() {
 }
 
 function binaWidget(konfigurasi) {
-  const endpoint = tentukanEndpoint(konfigurasi);
+  // ==============================================================
+  // KEMASKINI DI SINI: Kita tetapkan URL Worker secara terus (hardcode)
+  // Ini bagi memastikan ia tidak gagal mencari endpoint dari fail konfigurasi.
+  // ==============================================================
+  const endpoint = "https://asyariff-bot.asyariff-kafa.workers.dev/api/chat"; 
+  
   const state = {
     endpoint,
     history: [],
