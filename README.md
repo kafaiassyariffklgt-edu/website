@@ -15,8 +15,9 @@ Datok**, Banting, Kuala Langat. Laman ini masih **draf** dan semua halaman mempu
 | `data/` | Data awam: profil sekolah, kepimpinan, kurikulum, program, statistik, carian |
 | `assets/` | Lencana, poster sorotan dan fon tempatan |
 | `web-api-module/` | Modul masa, kalendar dan waktu solat e-Solat |
+| `worker/` | Worker Cloudflare untuk chatbot AI (NVIDIA NIM) dan webhook Telegram |
 | `dev/` | Makmal gerak dalaman (`noindex`, tidak dipautkan dari laman awam) |
-| `tools/` | Pelayan tempatan dan skrip semakan |
+| `tools/` | Pelayan tempatan, proksi chatbot dan skrip semakan |
 
 ## Pembangunan tempatan
 
@@ -25,8 +26,155 @@ node tools/serve.mjs
 # http://127.0.0.1:8081/
 ```
 
+Untuk chatbot AI, jalankan proksi dalam terminal kedua:
+
+```bash
+node tools/chat-proxy.mjs
+# http://127.0.0.1:8787/api/chat
+```
+
+Proksi membaca `NVIDIA_API_KEY` daripada `.env`. Kunci tidak pernah dihantar ke
+pelayar. Panduan produksi dan Telegram: [`worker/README.md`](worker/README.md).
+
 Pelayan menyokong Range untuk pembaca PDF dan tidak menyajikan fail peribadi seperti
 `.env`, `kafa-db.json`, `status.txt` atau folder laporan.
+
+## Chatbot AI
+
+Widget **ASY-SYARIFF BOT** terapung di bawah kanan setiap halaman. Ia menggunakan
+model NVIDIA Nemotron melalui proksi pelayan; kunci API tidak berada dalam kod
+pelayar.
+
+| Fail | Fungsi |
+|---|---|
+| `data/chatbot.json` | Nama, salam, endpoint, pautan WhatsApp/Telegram dan **menu soalan** |
+| `data/chatbot-kontekst.json` | Pangkalan pengetahuan sekolah untuk AI |
+| `js/modules/chatbot/` | Widget modular: `api.js`, `render.js`, `index.js` |
+| `css/chatbot.css` | Gaya butang dan panel |
+| `tools/chat-proxy.mjs` | Proksi tempatan |
+| `worker/` | Worker produksi + webhook Telegram |
+
+Tambah atau buang item dalam array `menu` pada `data/chatbot.json` untuk mengubah
+senarai soalan pantas. Menu yang sama digunakan oleh widget web dan bot Telegram.
+
+Jawapan AI dihadkan kepada fakta dalam `data/chatbot-kontekst.json`. Maklumat yang
+belum disahkan akan dijawab sebagai belum disahkan dan dirujuk kepada sekolah.
+
+> **Keselamatan:** jangan masukkan kunci API ke dalam `data/chatbot.json` atau
+> mana-mana fail `js/`. Jika kunci pernah terdedah, jana semula di NVIDIA sebelum
+> menerbitkan laman.
+
+## Remote MCP untuk Claude.ai
+
+Claude.ai (web) boleh membaca dan menulis fail projek ini melalui pelayan
+[FileBridge MCP](https://github.com/WebifyGO/filebridge-mcp) yang berjalan pada
+komputer ini dan didedahkan melalui Cloudflare Quick Tunnel.
+
+### Seni bina
+
+```text
+Claude.ai  ──HTTPS──>  trycloudflare.com  ──>  cloudflared
+                                                    │
+                                           127.0.0.1:3000
+                                                    │
+                                          FileBridge MCP (Node)
+                                                    │
+                                    C:\Users\rafee\Downloads\KAFA\kafai-website
+```
+
+### Fail berkaitan
+
+| Lokasi | Fungsi |
+|---|---|
+| `C:\Tools\filebridge-mcp\` | Pemasangan FileBridge MCP |
+| `C:\Tools\filebridge-mcp\.env` | `PORT`, `BASE_PATH`, `BEARER_TOKEN` (jangan commit) |
+| `C:\Tools\bin\cloudflared.exe` | Binari Cloudflare Tunnel |
+| `start-filebridge.ps1` | Jalankan pelayan MCP pada port 3000 |
+| `start-tunnel.ps1` | Buka Quick Tunnel dan tulis URL ke `mcp-connection.txt` |
+
+### Jalankan
+
+Dua terminal PowerShell 7:
+
+```powershell
+.\start-filebridge.ps1
+```
+
+```powershell
+.\start-tunnel.ps1
+```
+
+Selepas beberapa saat, skrip kedua memaparkan URL awam dan menulis butiran
+sambungan ke `mcp-connection.txt` (dihadkan kepada pengguna Windows semasa dan
+disenaraikan dalam `.gitignore`).
+
+Uji secara tempatan:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:3000/health
+```
+
+### Sambung ke Claude.ai
+
+1. Buka **Settings → Connectors → Add custom connector**.
+2. Pilih **Remote MCP**.
+3. Masukkan URL penuh **bersama token**:
+
+   ```text
+   https://<nama-rawak>.trycloudflare.com/mcp?token=<BEARER_TOKEN>
+   ```
+
+   Gunakan URL daripada `mcp-connection.txt`. Endpoint ialah `/mcp`
+   (Streamable HTTP), bukan `/sse` atau `/message`.
+4. Simpan dan klik **Connect**.
+
+Claude.ai menyokong OAuth secara lalai. Pelayan ini memulangkan `404` pada
+endpoint `.well-known` OAuth, jadi Claude melangkau OAuth. Jika akaun anda
+mempunyai ciri *static credential* (beta), masukkan token sebagai Bearer;
+jika tidak, token dalam URL di atas adalah kaedah yang berfungsi.
+
+> **Nota teknikal:** endpoint `/mcp` menggunakan Streamable HTTP dengan respons
+> JSON. Endpoint warisan `/sse` masih tersedia untuk klien desktop, tetapi
+> Cloudflare Quick Tunnel membuffer respons SSE sehingga tiada data sampai ke
+> klien. Gunakan `/mcp` untuk Claude.ai.
+
+### Alat yang tersedia
+
+`read_file`, `write_file`, `list_files`, `delete_file`, `get_project_structure`,
+`search_in_files`, `replace_in_files`, `list_workspaces`.
+
+`run_command` **dimatikan** (`ALLOWED_COMMANDS=` kosong) supaya klien tidak dapat
+menjalankan shell di luar kawalan laluan fail.
+
+### Fail yang disekat
+
+Lapisan tambahan dalam `src/utils/denyList.js` menghalang akses kepada:
+
+- `.env`, `.env.*`, `.dev.vars`, `.npmrc`, `.netrc`
+- `.git/`, `.wrangler/`, `.pawprints/`, `node_modules/`
+- `status.txt`, `Guru dan Murid terkini.txt`, `_laporan/`
+- `semak-perkim.*`, `push.js`, `push.bat`, `*.pem`, `*.key`
+
+Sekatan ini terpakai pada baca, tulis, padam, senarai direktori dan carian
+seluruh projek. Jika fail baharu perlu dilindungi, tambah namanya dalam
+`denyList.js` dan mulakan semula pelayan.
+
+### Amaran keselamatan
+
+- **Quick Tunnel adalah sementara.** URL berubah setiap kali `start-tunnel.ps1`
+  dimulakan semula; kemas kini URL dalam Claude.ai selepas itu.
+- Sesiapa yang mempunyai URL **dan** token boleh membaca/menulis projek. Jangan
+  kongsi `mcp-connection.txt`.
+- Folder projek mengandungi `.env` dengan token GitHub/NVIDIA. Walaupun sudah
+  disekat oleh `denyList.js`, jangan andaikan lapisan itu sempurna.
+- Hentikan terowong apabila tidak digunakan:
+
+  ```powershell
+  .\start-tunnel.ps1 -Stop
+  ```
+
+- Untuk kegunaan berterusan, gunakan **Named Tunnel** dengan domain sendiri dan
+  **Cloudflare Access** (Service Token atau e-mel OTP) dan bukan Quick Tunnel.
 
 ## Semakan
 

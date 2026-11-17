@@ -11,3 +11,12 @@ _perkim-import/
 status.txt
 semak-perkim.ps1
 Guru dan Murid terkini.txt
+
+# Cloudflare Wrangler (state tempatan dan rahsia dev)
+.wrangler/
+.dev.vars
+
+# Remote MCP (FileBridge) — log dan fail sambungan mengandungi token
+.mcp-tunnel.log
+.mcp-tunnel.out.log
+mcp-connection.txt

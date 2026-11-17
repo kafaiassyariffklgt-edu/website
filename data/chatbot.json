@@ -1,0 +1,52 @@
+{
+  "aktif": true,
+  "nama": "ASY-SYARIFF BOT",
+  "subjudul": "Pembantu maya sekolah",
+  "salam": "Assalamualaikum! Saya ASY-SYARIFF BOT, pembantu maya laman KAFAI As-Syariff Telok Datok. Pilih menu di bawah atau taip soalan anda.",
+  "placeholder": "Taip soalan anda…",
+  "nota": "Jawapan dijana oleh AI dan mungkin tidak lengkap. Sahkan maklumat penting dengan pihak sekolah.",
+  "menu_tajuk": "Menu soalan",
+  "menu": [
+    {
+      "id": "profil",
+      "label": "Profil sekolah",
+      "soalan": "Boleh terangkan profil ringkas KAFAI As-Syariff Telok Datok?"
+    },
+    {
+      "id": "kurikulum",
+      "label": "Kurikulum & subjek",
+      "soalan": "Apakah kurikulum dan mata pelajaran di sekolah ini?"
+    },
+    {
+      "id": "waktu",
+      "label": "Waktu persekolahan",
+      "soalan": "Bila waktu persekolahan dan hari operasi sekolah?"
+    },
+    {
+      "id": "program",
+      "label": "Program akan datang",
+      "soalan": "Apakah program sekolah yang akan datang?"
+    },
+    {
+      "id": "hubungi",
+      "label": "Lokasi & hubungan",
+      "soalan": "Di mana lokasi sekolah dan bagaimana saya boleh menghubungi pihak sekolah?"
+    },
+    {
+      "id": "kepimpinan",
+      "label": "Kepimpinan sekolah",
+      "soalan": "Siapa Guru Besar dan barisan guru sekolah ini?"
+    },
+    {
+      "id": "privasi",
+      "label": "Data & privasi",
+      "soalan": "Apakah dasar privasi data murid di laman ini?"
+    }
+  ],
+  "endpoint": {
+    "localhost": "http://127.0.0.1:8787/api/chat",
+    "produksi": ""
+  },
+  "whatsapp": "https://wa.me/60136656964",
+  "telegram": ""
+}
