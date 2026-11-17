@@ -1,0 +1,287 @@
+/* ==========================================================================
+   orientasi.css — penyesuaian untuk telefon/tablet dalam mod landskap
+   dan tetingkap yang rendah.
+
+   Dimuatkan selepas semua modul lain supaya boleh menindih aturan
+   `max-width` sedia ada, yang tidak mengambil kira tinggi skrin.
+   ========================================================================== */
+
+/* Unit pandangan dinamik: bar alamat pelayar mudah alih tidak lagi
+   memotong kandungan apabila ia muncul/hilang. */
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* Peranti berlekuk (notch) dalam mod landskap: kandungan tidak masuk ke
+   bawah potongan skrin. env() bernilai 0 pada peranti biasa, jadi susun
+   atur sedia ada tidak berubah. */
+@media (orientation: landscape) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Skrin rendah / landskap (contoh 844×390, 667×375, 932×430)
+   -------------------------------------------------------------------------- */
+
+@media (orientation: landscape) and (max-height: 560px) {
+  :root {
+    --topbar-h: 32px;
+    --nav-h: 46px;
+    --section-y: clamp(1.25rem, 1rem + 2vh, 2rem);
+  }
+
+  /* Notis draf dan bar atas dipadatkan supaya hero tidak tenggelam. */
+  .draft-banner__inner {
+    padding-block: 0.35rem;
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+
+  .topbar__inner {
+    font-size: 0.7rem;
+  }
+
+  /* Masthead: logo dan wordmark lebih kecil. */
+  .masthead__inner {
+    padding-block: 0.4rem;
+    gap: 1rem;
+  }
+
+  .masthead__brand {
+    gap: 0.7rem;
+  }
+
+  .masthead__logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .masthead__org {
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+  }
+
+  .masthead__arabic {
+    font-size: 1.02rem;
+    line-height: 1.25;
+  }
+
+  .masthead__eng {
+    font-size: 0.52rem;
+    letter-spacing: 0.14em;
+  }
+
+  .masthead__branch {
+    margin-top: 0.15rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Hero utama: dua lajur walaupun lebar < 900px, supaya tinggi berkurang. */
+  .hero-home__inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(140px, 0.55fr);
+    gap: 1.25rem;
+    padding-block: 1.25rem;
+  }
+
+  .hero-home__eyebrow {
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.68rem;
+  }
+
+  .hero-home h1 {
+    font-size: clamp(1.45rem, 1.1rem + 2.2vw, 2.1rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-home__motto {
+    font-size: clamp(1.25rem, 1rem + 1.2vw, 1.6rem);
+  }
+
+  .hero-home__facts {
+    margin-top: 0.85rem;
+    gap: 0.35rem;
+  }
+
+  .hero-home__emblem {
+    order: 0;
+    justify-content: flex-end;
+  }
+
+  .hero-home__emblem-inner {
+    width: min(150px, 28vw);
+  }
+
+  .hero-home__emblem-caption,
+  .hero-home__scroll {
+    display: none;
+  }
+
+  /* Hero halaman dalaman. */
+  .page-hero {
+    padding-block: 1.15rem;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.4rem, 1.1rem + 2vw, 2rem);
+  }
+
+  /* Panel chatbot: bukan skrin penuh, saiz mengikut tinggi sebenar. */
+  .asyabot {
+    inset: auto max(0.5rem, env(safe-area-inset-right))
+      max(0.5rem, env(safe-area-inset-bottom)) auto;
+    width: min(580px, calc(100vw - 1rem));
+    height: calc(100dvh - 1rem);
+    border-radius: 14px;
+  }
+
+  .asyabot__head {
+    padding: 0.4rem 0.55rem;
+    gap: 0.45rem;
+    border-bottom-width: 2px;
+  }
+
+  .asyabot__logo {
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+  }
+
+  .asyabot__logo img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .asyabot__title {
+    font-size: 0.74rem;
+  }
+
+  .asyabot__status {
+    font-size: 0.6rem;
+  }
+
+  .asyabot__menu-toggle {
+    padding: 0.22rem 0.45rem;
+    font-size: 0.62rem;
+  }
+
+  .asyabot__close {
+    width: 26px;
+    height: 26px;
+    font-size: 1.15rem;
+  }
+
+  .asyabot__log {
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Menu menjadi jalur mendatar dua baris — menjimatkan tinggi. */
+  .asyabot__menu {
+    max-height: none;
+    padding: 0.35rem 0.55rem 0.4rem;
+  }
+
+  .asyabot__menu-title {
+    display: none;
+  }
+
+  .asyabot__menu-list {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, minmax(0, auto));
+    grid-auto-columns: minmax(140px, 1fr);
+    gap: 0.3rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    padding-bottom: 0.15rem;
+  }
+
+  .asyabot__menu-item {
+    min-height: 30px;
+    padding: 0.25rem 0.4rem;
+    font-size: 0.66rem;
+    scroll-snap-align: start;
+  }
+
+  .asyabot__form {
+    padding: 0.4rem 0.55rem;
+  }
+
+  .asyabot__input {
+    min-height: 34px;
+    padding: 0.4rem 0.55rem;
+    font-size: 0.8rem;
+  }
+
+  .asyabot__send {
+    width: 34px;
+    height: 34px;
+  }
+
+  .asyabot__note {
+    padding: 0.25rem 0.55rem calc(0.3rem + env(safe-area-inset-bottom));
+    font-size: 0.55rem;
+  }
+
+  .asyabot-msg__bubble {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .asyabot-launcher {
+    bottom: max(0.6rem, env(safe-area-inset-bottom));
+    padding: 0.3rem 0.75rem 0.3rem 0.32rem;
+  }
+
+  .asyabot-launcher__logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .asyabot-launcher__logo img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .asyabot-launcher__text {
+    font-size: 0.7rem;
+  }
+}
+
+/* Skrin sangat rendah (contoh telefon kecil dalam landskap). */
+@media (orientation: landscape) and (max-height: 380px) {
+  .masthead__contact {
+    display: none;
+  }
+
+  .hero-home__emblem {
+    display: none;
+  }
+
+  .hero-home__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .asyabot__note {
+    display: none;
+  }
+
+  .asyabot__menu {
+    max-height: 76px;
+  }
+}
+
+/* Peranti boleh lipat / tetingkap rendah tanpa orientasi jelas. */
+@media (max-height: 480px) and (orientation: portrait) {
+  .hero-home__emblem-inner {
+    width: 120px;
+  }
+}

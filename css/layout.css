@@ -1278,6 +1278,21 @@
   }
 }
 
+@media (max-width: 560px) {
+  /* Baris cawangan asalnya `width: 0` + `nowrap` supaya boleh melebihi
+     baris pertama pada skrin lebar. Pada telefon ia melepasi tepi skrin,
+     jadi benarkan teks membalut dalam lebar blok wordmark. */
+  .masthead__branch {
+    width: auto;
+    align-self: stretch;
+    white-space: normal;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    text-align: center;
+  }
+}
+
 @media (max-width: 520px) {
   .topbar__announce {
     font-size: 0.72rem;
