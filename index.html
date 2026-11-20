@@ -61,10 +61,10 @@
             <a class="btn btn--light" href="pages/program.html">Kalendar program</a>
           </div>
           <ul class="hero-home__facts">
-            <li><strong>BYT1005</strong> kod JAKIM</li>
+            <li><strong data-bind="statistik.kodJakim">BYT1005</strong> kod JAKIM</li>
             <li>Sesi <strong>petang</strong></li>
-            <li><strong>6</strong> kelas</li>
-            <li><strong>181</strong> murid berdaftar</li>
+            <li><strong data-bind="statistik.kelas">6</strong> kelas</li>
+            <li><strong data-bind="statistik.murid.jumlah">181</strong> murid berdaftar</li>
           </ul>
         </div>
         <div class="hero-home__emblem">
@@ -303,24 +303,24 @@
 
       <div class="stat-grid">
         <div class="stat">
-          <div class="stat__value">181</div>
+          <div class="stat__value" data-bind="statistik.murid.jumlah">181</div>
           <div class="stat__label">murid berdaftar</div>
         </div>
         <div class="stat">
-          <div class="stat__value">6</div>
+          <div class="stat__value" data-bind="statistik.kelas">6</div>
           <div class="stat__label">kelas (Tahun 1–6)</div>
         </div>
         <div class="stat">
-          <div class="stat__value">8</div>
+          <div class="stat__value" data-bind="statistik.guru">8</div>
           <div class="stat__label">guru semasa</div>
         </div>
         <div class="stat">
-          <div class="stat__value">13</div>
+          <div class="stat__value" data-bind="statistik.program">13</div>
           <div class="stat__label">program dalam kalendar</div>
         </div>
       </div>
-      <p class="field__hint">Pecahan murid berdaftar: 98 lelaki dan 83 perempuan. Angka
-        enrolmen kelas berjumlah 181; papan catatan harian mencatat 180. Tiada data kehadiran
+      <p class="field__hint">Pecahan murid berdaftar: <span data-bind="statistik.murid.lelaki">98</span> lelaki dan <span data-bind="statistik.murid.perempuan">83</span> perempuan. Angka
+        enrolmen kelas berjumlah <span data-bind="statistik.murid.jumlah">181</span>; papan catatan harian mencatat <span data-bind="statistik.murid.catatanHarian">180</span>. Tiada data kehadiran
         individu disiarkan.</p>
       <div class="btn-row">
         <a class="btn btn--ghost btn--sm" href="pages/tentang.html#statistik">Butiran statistik</a>

@@ -3,11 +3,13 @@
   "nota": "Kandungan ini dihimpun daripada data awam laman. Item yang bertanda 'belum disahkan' tidak boleh dijawab sebagai fakta. Jangan tambah data peribadi murid atau guru.",
   "fakta": [
     {
+      "id": "identiti",
       "tajuk": "Identiti sekolah",
       "teks": "Nama rasmi: KAFA Integrasi As-Syariff Telok Datok (singkatan KAFAI As-Syariff). Nama penuh: Kelas Al-Quran dan Fardu Ain Integrasi As-Syariff. Motto: 'Ilmu Sinar Hidup' (علمو سينر هيدوڤ). Cawangan: Telok Datok, Banting, Kuala Langat, Selangor. Sesi persekolahan: petang. Kod JAKIM: BYT1005. Status pendaftaran: Berdaftar. Sekolah ini berada di bawah seliaan JAIS Selangor dan menggunakan kurikulum KAFA JAKIM.",
       "sumber": "pages/tentang.html"
     },
     {
+      "id": "hubungan",
       "tajuk": "Alamat dan hubungan",
       "teks": "Alamat: Telok Datok, 42700 Banting, Selangor. Telefon dan WhatsApp: 013-665 6964. E-mel: kafaiassyariff.klgt@gmail.com. Facebook pentadbiran: https://www.facebook.com/pentadbiran.kafaiassyariff/. Lokasi bersebelahan bangunan JKR dan Jabatan Perhutanan. Peta: https://www.google.com/maps/search/?api=1&query=KAFAI+As-Syarif+Telok+Datok+Banting",
       "sumber": "pages/hubungi.html"
@@ -18,6 +20,7 @@
       "sumber": "pages/hubungi.html"
     },
     {
+      "id": "statistik",
       "tajuk": "Statistik agregat",
       "teks": "6 kelas (Tahun 1 hingga Tahun 6), 181 murid berdaftar (98 lelaki dan 83 perempuan; papan catatan harian mencatat 180 dan perbezaan satu murid belum diselesaikan), 8 guru, 11 mata pelajaran dan 13 program dalam kalendar. Bangunan sendiri sejak 2007. Tarikh penubuhan sekitar tahun 2000 masih memerlukan pengesahan. Tiada asrama.",
       "sumber": "pages/tentang.html"

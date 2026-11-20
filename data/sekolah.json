@@ -1,5 +1,7 @@
 {
  "namaPaparan": "KAFA Integrasi As-Syariff Telok Datok",
+ "namaPenuh": "Kelas Al-Quran dan Fardu Ain Integrasi As-Syariff",
+ "singkatan": "KAFAI As-Syariff",
  "namaRasmi": "KAFAI AS-SYARIF TELOK DATOK",
  "kod": "BYT1005",
  "lokasi": "Telok Datok, Banting, Selangor",
@@ -16,6 +18,9 @@
  "mottoRumi": "Ilmu Sinar Hidup",
  "jenis": "KAFA (Kelas Al-Quran dan Fardu Ain), di bawah JAIS",
  "waktu": "Sesi petang (sekitar 12.30 tengah hari – 5.30 petang)",
+ "hariOperasi": "Isnin hingga Jumaat",
+ "lokasiBersebelahan": "bangunan JKR dan Jabatan Perhutanan",
+ "peta": "https://www.google.com/maps/search/?api=1&query=KAFAI+As-Syarif+Telok+Datok+Banting",
  "asrama": "Tiada",
  "pelajar": "Lelaki dan perempuan",
  "sejarah": [

@@ -72,15 +72,15 @@
       <dl class="fact-grid">
         <div>
           <dt>Kod JAKIM</dt>
-          <dd>BYT1005</dd>
+          <dd data-bind="statistik.kodJakim">BYT1005</dd>
         </div>
         <div>
           <dt>Status pendaftaran</dt>
-          <dd>Berdaftar</dd>
+          <dd data-bind="statistik.status">Berdaftar</dd>
         </div>
         <div>
           <dt>Sesi</dt>
-          <dd>Petang</dd>
+          <dd data-bind="statistik.sesi">Petang</dd>
         </div>
         <div>
           <dt>Jenis sekolah</dt>
@@ -88,11 +88,11 @@
         </div>
         <div>
           <dt>Asrama</dt>
-          <dd>Tiada</dd>
+          <dd data-bind="statistik.asrama">Tiada</dd>
         </div>
         <div>
           <dt>Alamat</dt>
-          <dd>Telok Datok, 42700 Banting, Selangor</dd>
+          <dd data-bind="sekolah.alamat">Telok Datok, 42700 Banting, Selangor</dd>
         </div>
       </dl>
 
@@ -135,33 +135,33 @@
 
       <div class="stat-grid">
         <div class="stat">
-          <div class="stat__value">181</div>
+          <div class="stat__value" data-bind="statistik.murid.jumlah">181</div>
           <div class="stat__label">murid berdaftar</div>
         </div>
         <div class="stat">
-          <div class="stat__value">98</div>
+          <div class="stat__value" data-bind="statistik.murid.lelaki">98</div>
           <div class="stat__label">murid lelaki</div>
         </div>
         <div class="stat">
-          <div class="stat__value">83</div>
+          <div class="stat__value" data-bind="statistik.murid.perempuan">83</div>
           <div class="stat__label">murid perempuan</div>
         </div>
         <div class="stat">
-          <div class="stat__value">6</div>
+          <div class="stat__value" data-bind="statistik.kelas">6</div>
           <div class="stat__label">kelas (Tahun 1–6)</div>
         </div>
         <div class="stat">
-          <div class="stat__value">8</div>
+          <div class="stat__value" data-bind="statistik.guru">8</div>
           <div class="stat__label">guru semasa</div>
         </div>
         <div class="stat">
-          <div class="stat__value">11</div>
+          <div class="stat__value" data-bind="statistik.mataPelajaran">11</div>
           <div class="stat__label">mata pelajaran KAFA</div>
         </div>
       </div>
       <p class="field__hint">Sumber: enrolmen kelas dan papan pergerakan guru bertarikh
-        16 November 2026. Jumlah enrolmen kelas ialah 181 murid (98 lelaki, 83 perempuan);
-        papan catatan harian mencatat 180. Perbezaan satu murid belum diselesaikan. Tiada data
+        16 November 2026. Jumlah enrolmen kelas ialah <span data-bind="statistik.murid.jumlah">181</span> murid (<span data-bind="statistik.murid.lelaki">98</span> lelaki, <span data-bind="statistik.murid.perempuan">83</span> perempuan);
+        papan catatan harian mencatat <span data-bind="statistik.murid.catatanHarian">180</span>. Perbezaan satu murid belum diselesaikan. Tiada data
         kehadiran individu atau status peribadi guru disiarkan.</p>
     </section>
 

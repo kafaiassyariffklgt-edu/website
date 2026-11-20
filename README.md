@@ -185,6 +185,29 @@ seluruh projek. Jika fail baharu perlu dilindungi, tambah namanya dalam
 - Untuk kegunaan berterusan, gunakan **Named Tunnel** dengan domain sendiri dan
   **Cloudflare Access** (Service Token atau e-mel OTP) dan bukan Quick Tunnel.
 
+## Data satu sumber
+
+Nombor dan maklumat asas sekolah disimpan sekali dalam `data/sekolah.json` dan
+`data/statistik.json`, kemudian digunakan oleh laman dan chatbot.
+
+- **Laman:** elemen HTML bertanda `data-bind="statistik.murid.jumlah"` diisi oleh
+  `js/modules/data-bind.js`. Teks di dalam elemen ialah nilai sandaran yang kekal jika
+  JavaScript mati atau fail JSON gagal dimuat. Nilai dimasukkan sebagai teks, bukan HTML.
+- **Chatbot:** fakta `identiti`, `hubungan` dan `statistik` dalam
+  `data/chatbot-kontekst.json` dijana daripada fail yang sama:
+
+  ```bash
+  node tools/bina-konteks.mjs           # kemas kini konteks bot
+  node tools/bina-konteks.mjs --semak   # semak sahaja (kod keluar 1 jika tidak selaras)
+  ```
+
+Aliran kerja menukar angka: ubah `data/statistik.json`, jalankan
+`node tools/bina-konteks.mjs`, kemudian terbitkan. Fakta lain dalam
+`chatbot-kontekst.json` masih disunting dengan tangan.
+
+Senarai data yang masih belum disahkan dan perlu diisi pihak sekolah ada dalam
+[`docs/senarai-semak-data-sekolah.md`](docs/senarai-semak-data-sekolah.md).
+
 ## Semakan
 
 ```bash
