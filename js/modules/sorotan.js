@@ -8,6 +8,7 @@
 
 import { getJSON, formatDate } from './utils.js';
 import { siteHref } from '../paths.js';
+import { initAnyFlipSlider } from './anyflip.js';
 
 const DEFAULT_INTERVAL = 7000;
 const ANIMATION_MS = 560;
@@ -465,4 +466,7 @@ export function initSorotan() {
   if (!slideshow) return;
 
   setupFeatured(section, slideshow, panel);
+  
+  // Load AnyFlip slides after initial setup
+  initAnyFlipSlider('[data-sorotan-stage]');
 }

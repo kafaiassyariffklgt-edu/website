@@ -546,3 +546,91 @@ html.js-ready .sorotan__controls {
     grid-template-columns: 1fr;
   }
 }
+
+/* --------------------------------------------------------------------------
+   AnyFlip Slide Styles
+   -------------------------------------------------------------------------- */
+
+.sorotan__anyflip-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sorotan__anyflip-link:hover .sorotan__slide {
+  box-shadow: var(--shadow-lg);
+}
+
+.sorotan__anyflip-badge {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: var(--c-gold);
+  color: var(--c-ink);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform var(--t-hover) var(--ease-out), box-shadow var(--t-hover) var(--ease-out);
+}
+
+.sorotan__anyflip-link:hover .sorotan__anyflip-badge {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* AnyFlip Card Grid (for bahan-bacaan.html, etc.) */
+.anyflip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.anyflip-card {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform var(--t-hover) var(--ease-out), box-shadow var(--t-hover) var(--ease-out);
+}
+
+.anyflip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.anyflip-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.anyflip-card__cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--c-bg-alt);
+}
+
+.anyflip-card__body {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.anyflip-card__subtitle {
+  margin: 0.25rem 0 0.75rem;
+  color: var(--c-text-soft);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.anyflip-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+}

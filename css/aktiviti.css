@@ -166,3 +166,29 @@
     flex-direction: column;
   }
 }
+
+/* AnyFlip button in activity detail */
+.activity-detail__anyflip {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border: 1px solid var(--c-gold);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #fffdf5 0%, #fff8e7 100%);
+  text-align: center;
+}
+
+.activity-detail__anyflip .btn--icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.activity-detail__anyflip-hint {
+  margin: 0.75rem 0 0;
+  color: var(--c-text-soft);
+  font-size: 0.875rem;
+  font-style: italic;
+}

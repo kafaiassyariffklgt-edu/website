@@ -150,6 +150,17 @@ function fullCaption(item) {
   </section>`;
 }
 
+function anyflipButton(item) {
+  if (!item.anyflipUrl) return '';
+  return `<div class="activity-detail__anyflip">
+    <a class="btn btn--gold btn--icon" href="${esc(item.anyflipUrl)}" target="_blank" rel="noopener noreferrer">
+      <span aria-hidden="true">📖</span>
+      <span>Buka Buku AnyFlip</span>
+    </a>
+    <p class="activity-detail__anyflip-hint">Buku kenangan Majlis Penyerahan Keputusan PSRA 2026 (Darjah 6)</p>
+  </div>`;
+}
+
 function renderDetail(item) {
   return `<article class="activity-detail">
     <p class="activity-detail__back"><a href="${esc(
@@ -161,6 +172,7 @@ function renderDetail(item) {
     ${item.lokasi ? `<p class="activity-detail__place"><strong>Lokasi:</strong> ${esc(item.lokasi)}</p>` : ''}
     ${detailGallery(item)}
     ${fullCaption(item)}
+    ${anyflipButton(item)}
     <div class="source-note">
       <p><strong>Sumber:</strong> ${esc(
         item.sumber || 'Kalendar program sekolah (data awam).'

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 475" width="500" height="475" role="img" aria-label="Lencana Rasmi KAFAI AS-SYARIFF — Ilmu Sinar Hidup"><style>@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;family=Montserrat:wght@900&amp;display=swap');</style>
+                    <defs>
+                      <!-- Gradien Emas Diraja untuk Mod Kemasan Emas & Timbul -->
+                      <linearGradient id="royalGoldGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+                        <stop offset="0%" stop-color="#FFF49C"/>
+                        <stop offset="28%" stop-color="#FFE600"/>
+                        <stop offset="55%" stop-color="#E6AC00"/>
+                        <stop offset="80%" stop-color="#FFE600"/>
+                        <stop offset="100%" stop-color="#C98E00"/>
+                      </linearGradient>
+
+                      <!-- Gradien Hijau Zamrud Berkedalaman untuk Mod Kemasan Diraja -->
+                      <radialGradient id="royalEmeraldGrad" cx="50%" cy="36%" r="64%">
+                        <stop offset="0%" stop-color="#148A49"/>
+                        <stop offset="65%" stop-color="#0D6936"/>
+                        <stop offset="100%" stop-color="#084824"/>
+                      </radialGradient>
+
+                      <!-- Laluan Bentuk Sayap Kiri (Left Wing Silhouette) -->
+                      <path id="leftWingOutline" d="M 92 116 Q 142 152 182 186 L 222 375 C 94 296 68 188 92 116 Z"/>
+
+                      <!-- Laluan Bentuk Sayap Kanan (Right Wing Silhouette - Simetri Cermin) -->
+                      <path id="rightWingOutline" d="M 408 116 Q 358 152 318 186 L 278 375 C 406 296 432 188 408 116 Z"/>
+
+                      <!-- ClipPath Sayap Kiri & Kanan supaya grid 2x2 tajam tanpa limpahan -->
+                      <clipPath id="clipLeftWing">
+                        <use href="#leftWingOutline"/>
+                      </clipPath>
+                      <clipPath id="clipRightWing">
+                        <use href="#rightWingOutline"/>
+                      </clipPath>
+
+                      <!-- Laluan Lengkungan Teks Jawi (Reben Atas) -->
+                      <path id="jawiRibbonPath" d="M 168 350 C 204 415 296 415 332 350" fill="none"/>
+
+                      <!-- Laluan Lengkungan Teks Rumi (Reben Bawah) -->
+                      <path id="rumiRibbonPath" d="M 165 385 C 204 450 296 450 335 385" fill="none"/>
+                    </defs>
+
+                    <!-- ==========================================================
+                         LAPISAN 1A: SAYAP MELENGKUNG KIRI (GRID 2x2 KUNING & MERAH)
+                         ========================================================== -->
+                    <g class="layer-wing-left">
+                      <g clip-path="url(#clipLeftWing)">
+                        <!-- Latar Asas Merah Terang (#E61E25) -->
+                        <rect x="60" y="100" width="175" height="290" fill="#E61E25"/>
+                        <!-- Kuadran Atas-Luar: Kuning Terang -->
+                        <path class="gold-accent-fill" d="M 60 100 L 135 100 L 134 146 C 127 182 127 207 129 232 L 60 220 Z" fill="url(#royalGoldGrad)"/>
+                        <!-- Kuadran Bawah-Dalam: Kuning Terang -->
+                        <path class="gold-accent-fill" d="M 129 232 L 200 242 L 200 385 L 174 342 C 148 302 134 268 129 232 Z" fill="url(#royalGoldGrad)"/>
+                      </g>
+                      <!-- Garis Pembahagi Grid 2x2 & Garis Luar Sayap Kiri -->
+                      <path d="M 134 146 C 127 194 130 264 174 342" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round"/>
+                      <path d="M 84 223 Q 132 234 184 240" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round"/>
+                      <use href="#leftWingOutline" fill="none" stroke="#000000" stroke-width="3.8" stroke-linejoin="round"/>
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 1B: SAYAP MELENGKUNG KANAN (GRID 2x2 KUNING & MERAH)
+                         ========================================================== -->
+                    <g class="layer-wing-right">
+                      <g clip-path="url(#clipRightWing)">
+                        <!-- Latar Asas Merah Terang (#E61E25) -->
+                        <rect x="265" y="100" width="175" height="290" fill="#E61E25"/>
+                        <!-- Kuadran Atas-Luar: Kuning Terang -->
+                        <path class="gold-accent-fill" d="M 440 100 L 365 100 L 366 146 C 373 182 373 207 371 232 L 440 220 Z" fill="url(#royalGoldGrad)"/>
+                        <!-- Kuadran Bawah-Dalam: Kuning Terang -->
+                        <path class="gold-accent-fill" d="M 371 232 L 300 242 L 300 385 L 326 342 C 352 302 366 268 371 232 Z" fill="url(#royalGoldGrad)"/>
+                      </g>
+                      <!-- Garis Pembahagi Grid 2x2 & Garis Luar Sayap Kanan -->
+                      <path d="M 366 146 C 373 194 370 264 326 342" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round"/>
+                      <path d="M 416 223 Q 368 234 316 240" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round"/>
+                      <use href="#rightWingOutline" fill="none" stroke="#000000" stroke-width="3.8" stroke-linejoin="round"/>
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 2: PERISAI / KUBAH OGEE HIJAU ISLAM (#0D6936)
+                         ========================================================== -->
+                    <g class="layer-shield">
+                      <path id="greenOgeeShield" d="M 250 26&#10;                           C 224 68, 182 106, 177 146&#10;                           C 175 164, 181 174, 181 185&#10;                           C 181 206, 166 226, 166 254&#10;                           C 166 306, 204 352, 250 381&#10;                           C 296 352, 334 306, 334 254&#10;                           C 334 226, 319 206, 319 185&#10;                           C 319 174, 325 164, 323 146&#10;                           C 318 106, 276 68, 250 26 Z" fill="url(#royalEmeraldGrad)" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 3: BINTANG 5 BUCU & BULAN SABIT MENGADAP ATAS
+                         ========================================================== -->
+                    <g class="layer-celestial">
+                      <!-- Bintang 5 Bucu (#FFE600) -->
+                      <polygon class="gold-accent-fill" points="250,72 256.8,88.6 274.7,90 261,101.6 265.3,119 250,109.6 234.7,119 239,101.6 225.3,90 243.2,88.6" fill="url(#royalGoldGrad)" stroke="#000000" stroke-width="2.6" stroke-linejoin="round"/>
+
+                      <!-- Bulan Sabit Menghadap Atas (#FFE600) -->
+                      <path class="gold-accent-fill" d="M 226 119&#10;                           A 25.5 25.5 0 1 0 274 119&#10;                           A 21.5 18.5 0 1 1 226 119 Z" fill="url(#royalGoldGrad)" stroke="#000000" stroke-width="2.6" stroke-linejoin="round"/>
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 4: KITAB / AL-QURAN TERBUKA BERLAPIS DI TENGAH
+                         ========================================================== -->
+                    <g class="layer-book">
+                      <!-- Tingkat Kuning Atas 1 -->
+                      <path class="gold-accent-fill" d="M 231 180 Q 241 178 250 185 Q 259 178 269 180 L 271 193 Q 260 191 250 198 Q 240 191 229 193 Z" fill="url(#royalGoldGrad)" stroke="#000000" stroke-width="2.6" stroke-linejoin="round"/>
+
+                      <!-- Tingkat Kuning Atas 2 -->
+                      <path class="gold-accent-fill" d="M 224 192 Q 238 190 250 198 Q 262 190 276 192 L 279 208 Q 264 205 250 214 Q 236 205 221 208 Z" fill="url(#royalGoldGrad)" stroke="#000000" stroke-width="2.6" stroke-linejoin="round"/>
+
+                      <!-- Kulit Bawah Kitab (Kuning) -->
+                      <path class="gold-accent-fill" d="M 212 267 Q 232 262 250 272 Q 268 262 288 267 L 289 276 Q 268 271 250 282 Q 232 271 211 276 Z" fill="url(#royalGoldGrad)" stroke="#000000" stroke-width="2.6" stroke-linejoin="round"/>
+
+                      <!-- Halaman Putih Kiri -->
+                      <path d="M 218 208 Q 235 204 250 214 L 250 272 Q 232 262 212 267 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.8" stroke-linejoin="round"/>
+
+                      <!-- Halaman Putih Kanan -->
+                      <path d="M 250 214 Q 265 204 282 208 L 288 267 Q 268 262 250 272 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.8" stroke-linejoin="round"/>
+
+                      <!-- 6 Baris Tulisan Melengkung (Halaman Kiri) -->
+                      <g fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round">
+                        <path d="M 224 218 Q 234 215 243 220"/>
+                        <path d="M 223 226 Q 234 223 243 228"/>
+                        <path d="M 222 234 Q 234 231 243 236"/>
+                        <path d="M 221 242 Q 234 239 243 244"/>
+                        <path d="M 220 250 Q 234 247 243 252"/>
+                        <path d="M 219 258 Q 234 255 243 260"/>
+                      </g>
+
+                      <!-- 6 Baris Tulisan Melengkung (Halaman Kanan) -->
+                      <g fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round">
+                        <path d="M 257 220 Q 266 215 276 218"/>
+                        <path d="M 257 228 Q 266 223 277 226"/>
+                        <path d="M 257 236 Q 266 231 278 234"/>
+                        <path d="M 257 244 Q 266 239 279 242"/>
+                        <path d="M 257 252 Q 266 247 280 250"/>
+                        <path d="M 257 260 Q 266 255 281 258"/>
+                      </g>
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 5: TOPI ILMU / MORTARBOARD (BAWAH PERISAI HIJAU)
+                         ========================================================== -->
+                    <g class="layer-cap">
+                      <!-- Bahagian Atas Chevron Putih Topi Ilmu -->
+                      <path d="M 250 301 L 278 315 L 274 322 L 250 311 L 226 322 L 222 315 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.4" stroke-linejoin="round"/>
+
+                      <!-- Bahagian Kopiah Bulat Hitam -->
+                      <ellipse cx="250" cy="336" rx="21" ry="16.5" fill="#000000" stroke="#000000" stroke-width="2"/>
+
+                      <!-- Lengkungan Kilauan Cahaya Putih di Atas Kopiah Hitam -->
+                      <path d="M 236 329 Q 250 322 264 329" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 6: REBEN SKROL DUA TINGKAT (JAWI & RUMI)
+                         ========================================================== -->
+                    <g class="layer-ribbons">
+                      <!-- Reben Atas Putih: "علمو سينر هيدوف" -->
+                      <path d="M 155 330&#10;                           C 194 398, 306 398, 345 330&#10;                           L 332 363&#10;                           C 295 431, 205 431, 168 363 Z" fill="#FFFFFF" stroke="#000000" stroke-width="3.6" stroke-linejoin="round"/>
+
+                      <!-- Reben Bawah Putih: "KAFAI AS-SYARIFF" -->
+                      <path d="M 171 366&#10;                           C 206 431, 294 431, 329 366&#10;                           L 340 396&#10;                           C 296 462, 204 462, 160 396 Z" fill="#FFFFFF" stroke="#000000" stroke-width="3.6" stroke-linejoin="round"/>
+
+                      <!-- Kaligrafi Jawi Melengkung: علمو سينر هيدوف -->
+                      <text fill="#000000" font-family="'Amiri', 'Noto Naskh Arabic', serif" font-size="24" font-weight="700" direction="rtl" unicode-bidi="embed">
+                        <textPath href="#jawiRibbonPath" startOffset="50%" text-anchor="middle">
+                          علمو سينر هيدوف
+                        </textPath>
+                      </text>
+
+                      <!-- Teks Rumi Tebal Melengkung: KAFAI AS-SYARIFF -->
+                      <text fill="#000000" font-family="'Montserrat', sans-serif" font-size="16.5" font-weight="900" letter-spacing="1.1">
+                        <textPath href="#rumiRibbonPath" startOffset="50%" text-anchor="middle">
+                          KAFAI AS-SYARIFF
+                        </textPath>
+                      </text>
+                    </g>
+                  </svg>

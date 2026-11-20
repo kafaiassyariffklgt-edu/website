@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAFAI AS-SYARIFF — Studio Vektor &amp; Kesan CSS Profesional</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans (UI), Montserrat 900 (Rumi Emblem), Amiri & Noto Naskh Arabic (Jawi Emblem), JetBrains Mono (Kod) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@900&family=Noto+Naskh+Arabic:wght@700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            emeraldKafai: {
+              DEFAULT: '#0D6936',
+              dark: '#084724',
+              deep: '#052E17',
+              light: '#E8F5EE',
+            },
+            goldKafai: {
+              DEFAULT: '#FFE600',
+              royal: '#D99B00',
+              soft: '#FFF9D6',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* ==========================================================================
+       GAYA TERAS STUDIO & KESAN GRAFIK PROFESIONAL KAFAI AS-SYARIFF
+       ========================================================================== */
+    :root {
+      --tilt-x: 0deg;
+      --tilt-y: 0deg;
+      --sheen-x: 50%;
+      --sheen-y: 35%;
+      --sheen-opacity: 0;
+    }
+
+    body {
+      background-color: #F7F5EF;
+      color: #15221B;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Tekstur titik halus untuk pentas pratonton putih */
+    .stage-bg-white {
+      background-color: #FFFFFF;
+      background-image: radial-gradient(#DCE3DF 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    /* Tekstur kertas gading rasmi untuk sijil/surat */
+    .stage-bg-paper {
+      background-color: #FBF7EC;
+      background-image:
+        radial-gradient(rgba(217, 155, 0, 0.08) 1px, transparent 0),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(242, 234, 214, 0.5) 100%);
+      background-size: 18px 18px, 100% 100%;
+    }
+
+    /* Mod Latar Gelap / Glassmorphism Institusi */
+    .stage-bg-glass {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(13, 105, 54, 0.55) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(217, 155, 0, 0.25) 0%, transparent 55%),
+        linear-gradient(145deg, #041D10 0%, #09351E 52%, #061A11 100%);
+    }
+
+    .glass-pedestal {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 230, 0, 0.24);
+      box-shadow:
+        0 24px 50px -12px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    /* Pemegang Perspektif 3D */
+    .emblem-perspective-wrap {
+      perspective: 1100px;
+      transform-style: preserve-3d;
+    }
+
+    .emblem-3d-card {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s ease;
+      will-change: transform;
+    }
+
+    .emblem-3d-card.tilt-active {
+      transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) scale(1.02);
+    }
+
+    /* Lapisan Kilauan Cahaya Spekular (Specular Light Sheen) */
+    .specular-sheen {
+      position: absolute;
+      inset: -12px;
+      border-radius: 28px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: radial-gradient(
+        circle 210px at var(--sheen-x) var(--sheen-y),
+        rgba(255, 255, 255, 0.55) 0%,
+        rgba(255, 245, 180, 0.22) 35%,
+        transparent 72%
+      );
+      mix-blend-mode: soft-light;
+      z-index: 20;
+    }
+
+    .emblem-3d-card.tilt-active .specular-sheen {
+      opacity: var(--sheen-opacity, 0.95);
+    }
+
+    /* Kemasan Emas Diraja & Timbul (Royal Metallic Foil & Drop-Shadow Emboss) */
+    .emblem-royal-emboss {
+      filter:
+        drop-shadow(0 14px 22px rgba(8, 45, 24, 0.26))
+        drop-shadow(0 4px 6px rgba(0, 0, 0, 0.16));
+    }
+
+    .stage-bg-glass .emblem-royal-emboss {
+      filter:
+        drop-shadow(0 18px 30px rgba(0, 0, 0, 0.65))
+        drop-shadow(0 0 24px rgba(255, 230, 0, 0.22));
+    }
+
+    /* Animasi Masuk Bertahap (Sequential Staggered Reveal) */
+    @keyframes revealScaleUp {
+      0% {
+        opacity: 0;
+        transform: scale(0.86) translateY(14px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes revealWingLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(26px) rotate(8deg) scale(0.92);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg) scale(1);
+      }
+    }
+
+    @keyframes revealWingRight {
+      0% {
+        opacity: 0;
+        transform: translateX(-26px) rotate(-8deg) scale(0.92);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg) scale(1);
+      }
+    }
+
+    @keyframes revealFloatDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-14px) scale(0.82);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes revealRibbonUp {
+      0% {
+        opacity: 0;
+        transform: translateY(16px) scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate-stagger .layer-shield {
+      transform-origin: 250px 210px;
+      animation: revealScaleUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.04s both;
+    }
+
+    .animate-stagger .layer-wing-left {
+      transform-origin: 210px 260px;
+      animation: revealWingLeft 0.58s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+    }
+
+    .animate-stagger .layer-wing-right {
+      transform-origin: 290px 260px;
+      animation: revealWingRight 0.58s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+    }
+
+    .animate-stagger .layer-celestial {
+      transform-origin: 250px 115px;
+      animation: revealFloatDown 0.52s cubic-bezier(0.34, 1.56, 0.64, 1) 0.34s both;
+    }
+
+    .animate-stagger .layer-book {
+      transform-origin: 250px 235px;
+      animation: revealScaleUp 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.46s both;
+    }
+
+    .animate-stagger .layer-cap {
+      transform-origin: 250px 328px;
+      animation: revealScaleUp 0.48s cubic-bezier(0.22, 1, 0.36, 1) 0.56s both;
+    }
+
+    .animate-stagger .layer-ribbons {
+      transform-origin: 250px 395px;
+      animation: revealRibbonUp 0.56s cubic-bezier(0.22, 1, 0.36, 1) 0.66s both;
+    }
+
+    /* Bar skrol kemas untuk panel kod */
+    pre::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    pre::-webkit-scrollbar-track {
+      background: #0F1713;
+    }
+    pre::-webkit-scrollbar-thumb {
+      background: #284234;
+      border-radius: 999px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- ========================================================================
+       PENGEPALA RASMI STUDIO (INSTITUTIONAL TOP BAR)
+       ======================================================================== -->
+  <header class="bg-white border-b border-emerald-900/10 sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-emeraldKafai flex items-center justify-center text-goldKafai shadow-sm shrink-0">
+          <!-- Ikon mini lencana -->
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L14.5 7.5L20.5 8.2L16 12.2L17.2 18.2L12 15.2L6.8 18.2L8 12.2L3.5 8.2L9.5 7.5L12 2Z" fill="#FFE600" stroke="#FFE600" stroke-width="1.5"/>
+            <path d="M5 20C8.5 22 15.5 22 19 20" stroke="#FFFFFF" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <h1 class="font-display font-extrabold text-base sm:text-lg tracking-tight text-slate-900">
+              KAFAI AS-SYARIFF
+            </h1>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emeraldKafai-light text-emeraldKafai border border-emerald-700/15">
+              Vektor SVG 1:1 &amp; Studio CSS
+            </span>
+          </div>
+          <p class="text-xs text-slate-500">
+            Lukisan semula vektor tepat &amp; kawalan kesan grafik profesional sedia eksport
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          id="btnTopDownloadSvg"
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-emeraldKafai text-white hover:bg-emeraldKafai-dark transition shadow-sm cursor-pointer"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
+          </svg>
+          <span>Muat Turun .SVG</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       KANDUNGAN UTAMA: PENTAS LENCANA & PANEL KAWALAN KESAN
+       ======================================================================== -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-8">
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+
+      <!-- ====================================================================
+           LAJUR KIRI: PENTAS PRATONTON VEKTOR INTERAKTIF (7 LAJUR)
+           ==================================================================== -->
+      <div class="lg:col-span-7 flex flex-col gap-4">
+        <div
+          id="previewStage"
+          class="stage-bg-white relative rounded-3xl border border-slate-200/90 shadow-sm overflow-hidden transition-all duration-500 min-h-[450px] sm:min-h-[540px] flex flex-col justify-between p-4 sm:p-6"
+        >
+          <!-- Bar Atas Pentas: Status Kesan & Kawalan Saiz -->
+          <div class="relative z-20 flex flex-wrap items-center justify-between gap-2">
+            <div id="stageBadge" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-white/90 text-slate-700 border border-slate-200/80 shadow-xs backdrop-blur-xs">
+              <span class="w-2 h-2 rounded-full bg-emeraldKafai"></span>
+              <span id="activeModeLabel">Vektor Asal (Flat Vector)</span>
+            </div>
+
+            <!-- Pemilih Saiz Pratonton Skala Vektor -->
+            <div class="inline-flex items-center bg-white/90 backdrop-blur-xs p-1 rounded-full border border-slate-200/80 shadow-xs text-xs">
+              <button type="button" data-size="220" class="size-btn px-2.5 py-1 rounded-full font-medium text-slate-600 hover:text-slate-900 transition cursor-pointer">
+                Kecil
+              </button>
+              <button type="button" data-size="330" class="size-btn px-2.5 py-1 rounded-full font-semibold bg-emeraldKafai text-white transition cursor-pointer">
+                Sederhana
+              </button>
+              <button type="button" data-size="410" class="size-btn px-2.5 py-1 rounded-full font-medium text-slate-600 hover:text-slate-900 transition cursor-pointer">
+                Penuh
+              </button>
+            </div>
+          </div>
+
+          <!-- Kawasan Tengah Lencana SVG -->
+          <div class="flex-1 flex items-center justify-center py-4 sm:py-6">
+            <div id="pedestalWrapper" class="rounded-3xl p-4 sm:p-6 transition-all duration-500">
+              <div class="emblem-perspective-wrap">
+                <div id="emblemCard" class="emblem-3d-card select-none">
+                  <!-- Lapisan Kilauan Cahaya Dinamik -->
+                  <div id="specularSheen" class="specular-sheen"></div>
+
+                  <!-- ============================================================
+                       LUKISAN VEKTOR SVG TEPAT KAFAI AS-SYARIFF (VIEWBOX 500x475)
+                       ============================================================ -->
+                  <svg
+                    id="kafaiEmblemSvg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 500 475"
+                    width="330"
+                    height="314"
+                    role="img"
+                    aria-label="Lencana Rasmi KAFAI AS-SYARIFF — Ilmu Sinar Hidup"
+                    class="block max-w-full h-auto transition-[width,height] duration-300"
+                  >
+                    <defs>
+                      <!-- Gradien Emas Diraja untuk Mod Kemasan Emas & Timbul -->
+                      <linearGradient id="royalGoldGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+                        <stop offset="0%" stop-color="#FFF49C" />
+                        <stop offset="28%" stop-color="#FFE600" />
+                        <stop offset="55%" stop-color="#E6AC00" />
+                        <stop offset="80%" stop-color="#FFE600" />
+                        <stop offset="100%" stop-color="#C98E00" />
+                      </linearGradient>
+
+                      <!-- Gradien Hijau Zamrud Berkedalaman untuk Mod Kemasan Diraja -->
+                      <radialGradient id="royalEmeraldGrad" cx="50%" cy="36%" r="64%">
+                        <stop offset="0%" stop-color="#148A49" />
+                        <stop offset="65%" stop-color="#0D6936" />
+                        <stop offset="100%" stop-color="#084824" />
+                      </radialGradient>
+
+                      <!-- Laluan Bentuk Sayap Kiri (Left Wing Silhouette) -->
+                      <path
+                        id="leftWingOutline"
+                        d="M 92 116 Q 142 152 182 186 L 222 375 C 94 296 68 188 92 116 Z"
+                      />
+
+                      <!-- Laluan Bentuk Sayap Kanan (Right Wing Silhouette - Simetri Cermin) -->
+                      <path
+                        id="rightWingOutline"
+                        d="M 408 116 Q 358 152 318 186 L 278 375 C 406 296 432 188 408 116 Z"
+                      />
+
+                      <!-- ClipPath Sayap Kiri & Kanan supaya grid 2x2 tajam tanpa limpahan -->
+                      <clipPath id="clipLeftWing">
+                        <use href="#leftWingOutline" />
+                      </clipPath>
+                      <clipPath id="clipRightWing">
+                        <use href="#rightWingOutline" />
+                      </clipPath>
+
+                      <!-- Laluan Lengkungan Teks Jawi (Reben Atas) -->
+                      <path
+                        id="jawiRibbonPath"
+                        d="M 168 350 C 204 415 296 415 332 350"
+                        fill="none"
+                      />
+
+                      <!-- Laluan Lengkungan Teks Rumi (Reben Bawah) -->
+                      <path
+                        id="rumiRibbonPath"
+                        d="M 165 385 C 204 450 296 450 335 385"
+                        fill="none"
+                      />
+                    </defs>
+
+                    <!-- ==========================================================
+                         LAPISAN 1A: SAYAP MELENGKUNG KIRI (GRID 2x2 KUNING & MERAH)
+                         ========================================================== -->
+                    <g class="layer-wing-left">
+                      <g clip-path="url(#clipLeftWing)">
+                        <!-- Latar Asas Merah Terang (#E61E25) -->
+                        <rect x="60" y="100" width="175" height="290" fill="#E61E25" />
+                        <!-- Kuadran Atas-Luar: Kuning Terang -->
+                        <path
+                          class="gold-accent-fill"
+                          d="M 60 100 L 135 100 L 134 146 C 127 182 127 207 129 232 L 60 220 Z"
+                          fill="#FFE600"
+                        />
+                        <!-- Kuadran Bawah-Dalam: Kuning Terang -->
+                        <path
+                          class="gold-accent-fill"
+                          d="M 129 232 L 200 242 L 200 385 L 174 342 C 148 302 134 268 129 232 Z"
+                          fill="#FFE600"
+                        />
+                      </g>
+                      <!-- Garis Pembahagi Grid 2x2 & Garis Luar Sayap Kiri -->
+                      <path
+                        d="M 134 146 C 127 194 130 264 174 342"
+                        fill="none"
+                        stroke="#000000"
+                        stroke-width="3.5"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M 84 223 Q 132 234 184 240"
+                        fill="none"
+                        stroke="#000000"
+                        stroke-width="3.5"
+                        stroke-linecap="round"
+                      />
+                      <use
+                        href="#leftWingOutline"
+                        fill="none"
+                        stroke="#000000"
+                        stroke-width="3.8"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 1B: SAYAP MELENGKUNG KANAN (GRID 2x2 KUNING & MERAH)
+                         ========================================================== -->
+                    <g class="layer-wing-right">
+                      <g clip-path="url(#clipRightWing)">
+                        <!-- Latar Asas Merah Terang (#E61E25) -->
+                        <rect x="265" y="100" width="175" height="290" fill="#E61E25" />
+                        <!-- Kuadran Atas-Luar: Kuning Terang -->
+                        <path
+                          class="gold-accent-fill"
+                          d="M 440 100 L 365 100 L 366 146 C 373 182 373 207 371 232 L 440 220 Z"
+                          fill="#FFE600"
+                        />
+                        <!-- Kuadran Bawah-Dalam: Kuning Terang -->
+                        <path
+                          class="gold-accent-fill"
+                          d="M 371 232 L 300 242 L 300 385 L 326 342 C 352 302 366 268 371 232 Z"
+                          fill="#FFE600"
+                        />
+                      </g>
+                      <!-- Garis Pembahagi Grid 2x2 & Garis Luar Sayap Kanan -->
+                      <path
+                        d="M 366 146 C 373 194 370 264 326 342"
+                        fill="none"
+                        stroke="#000000"
+                        stroke-width="3.5"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M 416 223 Q 368 234 316 240"
+                        fill="none"
+                        stroke="#000000"
+                        stroke-width="3.5"
+                        stroke-linecap="round"
+                      />
+                      <use
+                        href="#rightWingOutline"
+                        fill="none"
+                        stroke="#000000"
+                        stroke-width="3.8"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 2: PERISAI / KUBAH OGEE HIJAU ISLAM (#0D6936)
+                         ========================================================== -->
+                    <g class="layer-shield">
+                      <path
+                        id="greenOgeeShield"
+                        d="M 250 26
+                           C 224 68, 182 106, 177 146
+                           C 175 164, 181 174, 181 185
+                           C 181 206, 166 226, 166 254
+                           C 166 306, 204 352, 250 381
+                           C 296 352, 334 306, 334 254
+                           C 334 226, 319 206, 319 185
+                           C 319 174, 325 164, 323 146
+                           C 318 106, 276 68, 250 26 Z"
+                        fill="#0D6936"
+                        stroke="#000000"
+                        stroke-width="4"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 3: BINTANG 5 BUCU & BULAN SABIT MENGADAP ATAS
+                         ========================================================== -->
+                    <g class="layer-celestial">
+                      <!-- Bintang 5 Bucu (#FFE600) -->
+                      <polygon
+                        class="gold-accent-fill"
+                        points="250,72 256.8,88.6 274.7,90 261,101.6 265.3,119 250,109.6 234.7,119 239,101.6 225.3,90 243.2,88.6"
+                        fill="#FFE600"
+                        stroke="#000000"
+                        stroke-width="2.6"
+                        stroke-linejoin="round"
+                      />
+
+                      <!-- Bulan Sabit Menghadap Atas (#FFE600) -->
+                      <path
+                        class="gold-accent-fill"
+                        d="M 226 119
+                           A 25.5 25.5 0 1 0 274 119
+                           A 21.5 18.5 0 1 1 226 119 Z"
+                        fill="#FFE600"
+                        stroke="#000000"
+                        stroke-width="2.6"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 4: KITAB / AL-QURAN TERBUKA BERLAPIS DI TENGAH
+                         ========================================================== -->
+                    <g class="layer-book">
+                      <!-- Tingkat Kuning Atas 1 -->
+                      <path
+                        class="gold-accent-fill"
+                        d="M 231 180 Q 241 178 250 185 Q 259 178 269 180 L 271 193 Q 260 191 250 198 Q 240 191 229 193 Z"
+                        fill="#FFE600"
+                        stroke="#000000"
+                        stroke-width="2.6"
+                        stroke-linejoin="round"
+                      />
+
+                      <!-- Tingkat Kuning Atas 2 -->
+                      <path
+                        class="gold-accent-fill"
+                        d="M 224 192 Q 238 190 250 198 Q 262 190 276 192 L 279 208 Q 264 205 250 214 Q 236 205 221 208 Z"
+                        fill="#FFE600"
+                        stroke="#000000"
+                        stroke-width="2.6"
+                        stroke-linejoin="round"
+                      />
+
+                      <!-- Kulit Bawah Kitab (Kuning) -->
+                      <path
+                        class="gold-accent-fill"
+                        d="M 212 267 Q 232 262 250 272 Q 268 262 288 267 L 289 276 Q 268 271 250 282 Q 232 271 211 276 Z"
+                        fill="#FFE600"
+                        stroke="#000000"
+                        stroke-width="2.6"
+                        stroke-linejoin="round"
+                      />
+
+                      <!-- Halaman Putih Kiri -->
+                      <path
+                        d="M 218 208 Q 235 204 250 214 L 250 272 Q 232 262 212 267 Z"
+                        fill="#FFFFFF"
+                        stroke="#000000"
+                        stroke-width="2.8"
+                        stroke-linejoin="round"
+                      />
+
+                      <!-- Halaman Putih Kanan -->
+                      <path
+                        d="M 250 214 Q 265 204 282 208 L 288 267 Q 268 262 250 272 Z"
+                        fill="#FFFFFF"
+                        stroke="#000000"
+                        stroke-width="2.8"
+                        stroke-linejoin="round"
+                      />
+
+                      <!-- 6 Baris Tulisan Melengkung (Halaman Kiri) -->
+                      <g fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round">
+                        <path d="M 224 218 Q 234 215 243 220" />
+                        <path d="M 223 226 Q 234 223 243 228" />
+                        <path d="M 222 234 Q 234 231 243 236" />
+                        <path d="M 221 242 Q 234 239 243 244" />
+                        <path d="M 220 250 Q 234 247 243 252" />
+                        <path d="M 219 258 Q 234 255 243 260" />
+                      </g>
+
+                      <!-- 6 Baris Tulisan Melengkung (Halaman Kanan) -->
+                      <g fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round">
+                        <path d="M 257 220 Q 266 215 276 218" />
+                        <path d="M 257 228 Q 266 223 277 226" />
+                        <path d="M 257 236 Q 266 231 278 234" />
+                        <path d="M 257 244 Q 266 239 279 242" />
+                        <path d="M 257 252 Q 266 247 280 250" />
+                        <path d="M 257 260 Q 266 255 281 258" />
+                      </g>
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 5: TOPI ILMU / MORTARBOARD (BAWAH PERISAI HIJAU)
+                         ========================================================== -->
+                    <g class="layer-cap">
+                      <!-- Bahagian Atas Chevron Putih Topi Ilmu -->
+                      <path
+                        d="M 250 301 L 278 315 L 274 322 L 250 311 L 226 322 L 222 315 Z"
+                        fill="#FFFFFF"
+                        stroke="#000000"
+                        stroke-width="2.4"
+                        stroke-linejoin="round"
+                      />
+
+                      <!-- Bahagian Kopiah Bulat Hitam -->
+                      <ellipse
+                        cx="250"
+                        cy="336"
+                        rx="21"
+                        ry="16.5"
+                        fill="#000000"
+                        stroke="#000000"
+                        stroke-width="2"
+                      />
+
+                      <!-- Lengkungan Kilauan Cahaya Putih di Atas Kopiah Hitam -->
+                      <path
+                        d="M 236 329 Q 250 322 264 329"
+                        fill="none"
+                        stroke="#FFFFFF"
+                        stroke-width="2.6"
+                        stroke-linecap="round"
+                      />
+                    </g>
+
+                    <!-- ==========================================================
+                         LAPISAN 6: REBEN SKROL DUA TINGKAT (JAWI & RUMI)
+                         ========================================================== -->
+                    <g class="layer-ribbons">
+                      <!-- Reben Atas Putih: "علمو سينر هيدوف" -->
+                      <path
+                        d="M 155 330
+                           C 194 398, 306 398, 345 330
+                           L 332 363
+                           C 295 431, 205 431, 168 363 Z"
+                        fill="#FFFFFF"
+                        stroke="#000000"
+                        stroke-width="3.6"
+                        stroke-linejoin="round"
+                      />
+
+                      <!-- Reben Bawah Putih: "KAFAI AS-SYARIFF" -->
+                      <path
+                        d="M 171 366
+                           C 206 431, 294 431, 329 366
+                           L 340 396
+                           C 296 462, 204 462, 160 396 Z"
+                        fill="#FFFFFF"
+                        stroke="#000000"
+                        stroke-width="3.6"
+                        stroke-linejoin="round"
+                      />
+
+                      <!-- Kaligrafi Jawi Melengkung: علمو سينر هيدوف -->
+                      <text
+                        fill="#000000"
+                        font-family="'Amiri', 'Noto Naskh Arabic', serif"
+                        font-size="24"
+                        font-weight="700"
+                        direction="rtl"
+                        unicode-bidi="embed"
+                      >
+                        <textPath href="#jawiRibbonPath" startOffset="50%" text-anchor="middle">
+                          علمو سينر هيدوف
+                        </textPath>
+                      </text>
+
+                      <!-- Teks Rumi Tebal Melengkung: KAFAI AS-SYARIFF -->
+                      <text
+                        fill="#000000"
+                        font-family="'Montserrat', sans-serif"
+                        font-size="16.5"
+                        font-weight="900"
+                        letter-spacing="1.1"
+                      >
+                        <textPath href="#rumiRibbonPath" startOffset="50%" text-anchor="middle">
+                          KAFAI AS-SYARIFF
+                        </textPath>
+                      </text>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bar Bawah Pentas: Petunjuk Interaksi & Butang Main Semula Animasi -->
+          <div class="relative z-20 flex flex-wrap items-center justify-between gap-2 text-xs">
+            <p id="stageHint" class="text-slate-500">
+              Petunjuk: Klik mana-mana kesan di sebelah kanan untuk menggabungkan gaya visual.
+            </p>
+            <button
+              type="button"
+              id="btnReplayAnim"
+              class="hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold bg-emeraldKafai text-white hover:bg-emeraldKafai-dark transition shadow-xs cursor-pointer"
+            >
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h5M20 20v-5h-5M5.64 18.36A9 9 0 1018.36 5.64L20 7" />
+              </svg>
+              <span>Main Semula Animasi</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           LAJUR KANAN: PANEL KAWALAN KESAN PROFESIONAL & CADANGAN (5 LAJUR)
+           ==================================================================== -->
+      <div class="lg:col-span-5 flex flex-col gap-5">
+        <div class="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-6 shadow-xs space-y-4">
+          <div class="flex items-center justify-between gap-2">
+            <div>
+              <h2 class="font-display font-bold text-base sm:text-lg text-slate-900">
+                Kesan Grafik &amp; CSS Profesional
+              </h2>
+              <p class="text-xs text-slate-500 mt-0.5">
+                Togol dan gabungkan kesan secara langsung pada lencana
+              </p>
+            </div>
+            <button
+              type="button"
+              id="btnResetAll"
+              class="text-xs font-semibold text-emeraldKafai hover:text-emeraldKafai-dark underline underline-offset-2 cursor-pointer"
+            >
+              Set Semula
+            </button>
+          </div>
+
+          <!-- Senarai 5 Butang Kawalan Kesan Interaktif -->
+          <div class="space-y-2.5" id="effectControlsList">
+
+            <!-- 1. Vektor Asal (Clean Flat Vector) -->
+            <button
+              type="button"
+              data-effect="flat"
+              class="effect-pill w-full text-left p-3.5 rounded-2xl border-2 border-emeraldKafai bg-emeraldKafai-light/60 transition flex items-start justify-between gap-3 cursor-pointer"
+            >
+              <div class="flex items-start gap-3">
+                <span class="w-7 h-7 rounded-xl bg-emeraldKafai text-white font-display font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                  1
+                </span>
+                <div>
+                  <div class="font-semibold text-sm text-slate-900">Vektor Asal (Clean Flat Vector)</div>
+                  <p class="text-xs text-slate-600 mt-0.5">
+                    Kemasan 2D rata &amp; tajam tanpa bayang. Sesuai untuk kepala surat rasmi, cop mohor dan cetakan baju.
+                  </p>
+                </div>
+              </div>
+              <span class="status-badge px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emeraldKafai text-white shrink-0">
+                Aktif
+              </span>
+            </button>
+
+            <!-- 2. 3D Tilt & Kilauan Cahaya -->
+            <button
+              type="button"
+              data-effect="tilt"
+              class="effect-pill w-full text-left p-3.5 rounded-2xl border border-slate-200 hover:border-emerald-600/50 bg-white transition flex items-start justify-between gap-3 cursor-pointer"
+            >
+              <div class="flex items-start gap-3">
+                <span class="w-7 h-7 rounded-xl bg-slate-100 text-slate-700 font-display font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                  2
+                </span>
+                <div>
+                  <div class="font-semibold text-sm text-slate-900">3D Tilt &amp; Kilauan Cahaya</div>
+                  <p class="text-xs text-slate-600 mt-0.5">
+                    Perspektif 3D interaktif mengikut kursor/sentuhan berserta sapuan cahaya spekular lembut.
+                  </p>
+                </div>
+              </div>
+              <span class="status-badge px-2 py-0.5 rounded-full text-[11px] font-medium bg-slate-100 text-slate-600 shrink-0">
+                Tutup
+              </span>
+            </button>
+
+            <!-- 3. Animasi Masuk Bertahap -->
+            <button
+              type="button"
+              data-effect="stagger"
+              class="effect-pill w-full text-left p-3.5 rounded-2xl border border-slate-200 hover:border-emerald-600/50 bg-white transition flex items-start justify-between gap-3 cursor-pointer"
+            >
+              <div class="flex items-start gap-3">
+                <span class="w-7 h-7 rounded-xl bg-slate-100 text-slate-700 font-display font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                  3
+                </span>
+                <div>
+                  <div class="font-semibold text-sm text-slate-900">Animasi Masuk Bertahap</div>
+                  <p class="text-xs text-slate-600 mt-0.5">
+                    Koreografi kemunculan berurutan: perisai hijau, sayap, bintang &amp; bulan, kitab, serta reben skrol.
+                  </p>
+                </div>
+              </div>
+              <span class="status-badge px-2 py-0.5 rounded-full text-[11px] font-medium bg-slate-100 text-slate-600 shrink-0">
+                Tutup
+              </span>
+            </button>
+
+            <!-- 4. Kemasan Emas Diraja & Timbul -->
+            <button
+              type="button"
+              data-effect="royal"
+              class="effect-pill w-full text-left p-3.5 rounded-2xl border border-slate-200 hover:border-emerald-600/50 bg-white transition flex items-start justify-between gap-3 cursor-pointer"
+            >
+              <div class="flex items-start gap-3">
+                <span class="w-7 h-7 rounded-xl bg-slate-100 text-slate-700 font-display font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                  4
+                </span>
+                <div>
+                  <div class="font-semibold text-sm text-slate-900">Kemasan Emas Diraja &amp; Timbul</div>
+                  <p class="text-xs text-slate-600 mt-0.5">
+                    Kilauan gradien emas metalik &amp; bayang bertingkat (<code class="text-[11px]">drop-shadow</code>) untuk sijil digital &amp; sepanduk.
+                  </p>
+                </div>
+              </div>
+              <span class="status-badge px-2 py-0.5 rounded-full text-[11px] font-medium bg-slate-100 text-slate-600 shrink-0">
+                Tutup
+              </span>
+            </button>
+
+            <!-- 5. Mod Latar Gelap / Glassmorphism -->
+            <div class="p-3.5 rounded-2xl border border-slate-200 bg-white space-y-2.5">
+              <div class="flex items-start gap-3">
+                <span class="w-7 h-7 rounded-xl bg-slate-100 text-slate-700 font-display font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                  5
+                </span>
+                <div>
+                  <div class="font-semibold text-sm text-slate-900">Mod Latar Pentas &amp; Glassmorphism</div>
+                  <p class="text-xs text-slate-600 mt-0.5">
+                    Uji kejelasan lencana pada latar putih bersih, kertas gading sijil, atau kaca zamrud gelap.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-1.5 pt-1">
+                <button
+                  type="button"
+                  data-backdrop="white"
+                  class="backdrop-btn py-1.5 px-2 rounded-xl text-xs font-semibold border border-emeraldKafai bg-emeraldKafai-light text-emeraldKafai transition cursor-pointer"
+                >
+                  Putih Bersih
+                </button>
+                <button
+                  type="button"
+                  data-backdrop="paper"
+                  class="backdrop-btn py-1.5 px-2 rounded-xl text-xs font-medium border border-slate-200 text-slate-600 hover:bg-slate-50 transition cursor-pointer"
+                >
+                  Kertas Gading
+                </button>
+                <button
+                  type="button"
+                  data-backdrop="glass"
+                  class="backdrop-btn py-1.5 px-2 rounded-xl text-xs font-medium border border-slate-200 text-slate-600 hover:bg-slate-50 transition cursor-pointer"
+                >
+                  Zamrud Gelap
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Ringkasan Cadangan Penggunaan Profesional -->
+        <details class="bg-white rounded-3xl border border-slate-200/90 p-5 shadow-xs group">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-display font-bold text-sm text-slate-900">
+            <span>Cadangan Penggunaan Grafik Mengikut Platform</span>
+            <svg class="w-4 h-4 text-slate-500 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <ul class="mt-3.5 space-y-2.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+            <li class="flex gap-2">
+              <span class="font-bold text-emeraldKafai shrink-0">• Portal Rasmi:</span>
+              <span>Gabungkan <strong>Animasi Masuk Bertahap</strong> + <strong>3D Tilt</strong> pada bahagian utama (Hero) untuk impak moden.</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="font-bold text-emeraldKafai shrink-0">• E-Sijil &amp; Anugerah:</span>
+              <span>Gunakan <strong>Kemasan Emas Diraja &amp; Timbul</strong> di atas latar <strong>Kertas Gading</strong> untuk kemasan eksklusif.</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="font-bold text-emeraldKafai shrink-0">• Percetakan &amp; Sulaman:</span>
+              <span>Muat turun fail <strong>.SVG Tulen</strong> dalam mod <strong>Vektor Asal</strong> untuk skala tanpa pecah pada mana-mana saiz.</span>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PANEL EKSPORT KOD SATU KLIK (HTML + CSS + SVG & MUAT TURUN .SVG)
+         ====================================================================== -->
+    <section class="bg-white rounded-3xl border border-slate-200/90 shadow-xs overflow-hidden">
+      <div class="p-5 sm:p-6 border-b border-slate-100 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 class="font-display font-bold text-base sm:text-lg text-slate-900">
+            Panel Eksport Kod &amp; Fail Vektor
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">
+            Kod dijana secara automatik mengikut kesan visual yang sedang aktif di atas
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button
+            type="button"
+            id="btnCopyCode"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-white hover:bg-slate-800 transition shadow-xs cursor-pointer"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+            </svg>
+            <span>Salin Kod HTML + CSS + SVG</span>
+          </button>
+
+          <button
+            type="button"
+            id="btnDownloadSvg"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-emeraldKafai text-white hover:bg-emeraldKafai-dark transition shadow-xs cursor-pointer"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
+            </svg>
+            <span>Muat Turun Fail .SVG</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Pemilih Format Kod -->
+      <div class="px-5 sm:px-6 pt-3 bg-slate-50/70 border-b border-slate-200/80 flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <button
+            type="button"
+            data-codetab="html"
+            class="code-tab-btn px-3.5 py-2 text-xs font-semibold border-b-2 border-emeraldKafai text-emeraldKafai cursor-pointer"
+          >
+            HTML + CSS + SVG (Lengkap)
+          </button>
+          <button
+            type="button"
+            data-codetab="svg"
+            class="code-tab-btn px-3.5 py-2 text-xs font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-800 cursor-pointer"
+          >
+            Vektor .SVG Tulen Sahaja
+          </button>
+        </div>
+        <span class="text-[11px] font-mono text-slate-400 hidden sm:inline">UTF-8 • ViewBox 0 0 500 475</span>
+      </div>
+
+      <!-- Paparan Kod -->
+      <div class="bg-[#0B1410] text-emerald-100 p-4 sm:p-5">
+        <pre id="codeOutputBlock" class="font-mono text-xs leading-relaxed overflow-x-auto max-h-80 whitespace-pre"></pre>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       NOTIFIKASI TOAST (PENGGANTI ALERT YANG KEMAS)
+       ======================================================================== -->
+  <div
+    id="toastNotification"
+    role="status"
+    aria-live="polite"
+    class="fixed bottom-5 right-5 z-50 pointer-events-none opacity-0 translate-y-3 transition-all duration-300"
+  >
+    <div class="flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-slate-900 text-white text-xs sm:text-sm font-medium shadow-xl border border-emerald-500/30">
+      <span class="w-2.5 h-2.5 rounded-full bg-goldKafai shrink-0"></span>
+      <span id="toastMessage">Kod berjaya disalin!</span>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SKRIP INTERAKTIVITI STUDIO, KESAN 3D & PENJANA KOD EKSPORT
+       ======================================================================== -->
+  <script>
+    (function () {
+      // Keadaan semasa studio
+      const state = {
+        tilt: false,
+        stagger: false,
+        royal: false,
+        backdrop: 'white', // 'white' | 'paper' | 'glass'
+        codeTab: 'html',   // 'html' | 'svg'
+      };
+
+      // Rujukan elemen DOM
+      const previewStage = document.getElementById('previewStage');
+      const pedestalWrapper = document.getElementById('pedestalWrapper');
+      const emblemCard = document.getElementById('emblemCard');
+      const kafaiSvg = document.getElementById('kafaiEmblemSvg');
+      const greenOgeeShield = document.getElementById('greenOgeeShield');
+      const goldAccentEls = document.querySelectorAll('.gold-accent-fill');
+      const activeModeLabel = document.getElementById('activeModeLabel');
+      const stageBadge = document.getElementById('stageBadge');
+      const stageHint = document.getElementById('stageHint');
+      const btnReplayAnim = document.getElementById('btnReplayAnim');
+      const codeOutputBlock = document.getElementById('codeOutputBlock');
+      const toastEl = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+
+      let toastTimer = null;
+
+      // Papar mesej pemberitahuan (tanpa alert)
+      function showToast(message) {
+        toastMsg.textContent = message;
+        toastEl.classList.remove('opacity-0', 'translate-y-3');
+        toastEl.classList.add('opacity-100', 'translate-y-0');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toastEl.classList.remove('opacity-100', 'translate-y-0');
+          toastEl.classList.add('opacity-0', 'translate-y-3');
+        }, 2800);
+      }
+
+      // Main semula animasi masuk bertahap
+      function triggerStaggerReplay() {
+        emblemCard.classList.remove('animate-stagger');
+        void emblemCard.offsetWidth; // Paksa reflow DOM
+        emblemCard.classList.add('animate-stagger');
+      }
+
+      // Kemas kini semua kelas visual & teks status
+      function syncStudioUI() {
+        const isFlat = !state.tilt && !state.stagger && !state.royal && state.backdrop === 'white';
+
+        // 1. Kemas kini butang pil kesan
+        document.querySelectorAll('.effect-pill').forEach((btn) => {
+          const effect = btn.getAttribute('data-effect');
+          let active = false;
+          if (effect === 'flat') active = isFlat;
+          if (effect === 'tilt') active = state.tilt;
+          if (effect === 'stagger') active = state.stagger;
+          if (effect === 'royal') active = state.royal;
+
+          const numBadge = btn.querySelector('span:first-child');
+          const statusBadge = btn.querySelector('.status-badge');
+
+          if (active) {
+            btn.classList.remove('border-slate-200', 'bg-white');
+            btn.classList.add('border-2', 'border-emeraldKafai', 'bg-emeraldKafai-light/60');
+            numBadge.classList.remove('bg-slate-100', 'text-slate-700');
+            numBadge.classList.add('bg-emeraldKafai', 'text-white');
+            statusBadge.classList.remove('bg-slate-100', 'text-slate-600', 'font-medium');
+            statusBadge.classList.add('bg-emeraldKafai', 'text-white', 'font-semibold');
+            statusBadge.textContent = 'Aktif';
+          } else {
+            btn.classList.remove('border-2', 'border-emeraldKafai', 'bg-emeraldKafai-light/60');
+            btn.classList.add('border', 'border-slate-200', 'bg-white');
+            numBadge.classList.remove('bg-emeraldKafai', 'text-white');
+            numBadge.classList.add('bg-slate-100', 'text-slate-700');
+            statusBadge.classList.remove('bg-emeraldKafai', 'text-white', 'font-semibold');
+            statusBadge.classList.add('bg-slate-100', 'text-slate-600', 'font-medium');
+            statusBadge.textContent = 'Tutup';
+          }
+        });
+
+        // 2. Kemas kini butang latar belakang pentas
+        document.querySelectorAll('.backdrop-btn').forEach((btn) => {
+          const bg = btn.getAttribute('data-backdrop');
+          if (bg === state.backdrop) {
+            btn.classList.remove('border-slate-200', 'text-slate-600', 'font-medium');
+            btn.classList.add('border-emeraldKafai', 'bg-emeraldKafai-light', 'text-emeraldKafai', 'font-semibold');
+          } else {
+            btn.classList.remove('border-emeraldKafai', 'bg-emeraldKafai-light', 'text-emeraldKafai', 'font-semibold');
+            btn.classList.add('border-slate-200', 'text-slate-600', 'font-medium');
+          }
+        });
+
+        // 3. Kemas kini kelas latar pentas & pedestal glassmorphism
+        previewStage.classList.remove('stage-bg-white', 'stage-bg-paper', 'stage-bg-glass');
+        pedestalWrapper.classList.remove('glass-pedestal');
+
+        if (state.backdrop === 'white') {
+          previewStage.classList.add('stage-bg-white');
+          stageBadge.className = 'inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-white/90 text-slate-700 border border-slate-200/80 shadow-xs';
+          stageHint.className = 'text-slate-500';
+        } else if (state.backdrop === 'paper') {
+          previewStage.classList.add('stage-bg-paper');
+          stageBadge.className = 'inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-amber-50/95 text-amber-950 border border-amber-300/60 shadow-xs';
+          stageHint.className = 'text-amber-900/70';
+        } else if (state.backdrop === 'glass') {
+          previewStage.classList.add('stage-bg-glass');
+          pedestalWrapper.classList.add('glass-pedestal');
+          stageBadge.className = 'inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-white/10 text-emerald-100 border border-emerald-300/25 backdrop-blur-md';
+          stageHint.className = 'text-emerald-100/75';
+        }
+
+        // 4. Kesan 3D Tilt
+        if (state.tilt) {
+          emblemCard.classList.add('tilt-active');
+          stageHint.textContent = 'Gerakkan kursor atau sentuh lencana untuk melihat sudut 3D & kilauan cahaya.';
+        } else {
+          emblemCard.classList.remove('tilt-active');
+          emblemCard.style.setProperty('--tilt-x', '0deg');
+          emblemCard.style.setProperty('--tilt-y', '0deg');
+          emblemCard.style.setProperty('--sheen-opacity', '0');
+          if (!state.stagger) {
+            stageHint.textContent = 'Petunjuk: Klik mana-mana kesan di sebelah kanan untuk menggabungkan gaya visual.';
+          }
+        }
+
+        // 5. Kesan Animasi Masuk Bertahap
+        if (state.stagger) {
+          btnReplayAnim.classList.remove('hidden');
+        } else {
+          btnReplayAnim.classList.add('hidden');
+          emblemCard.classList.remove('animate-stagger');
+        }
+
+        // 6. Kesan Kemasan Emas Diraja & Timbul
+        if (state.royal) {
+          emblemCard.classList.add('emblem-royal-emboss');
+          greenOgeeShield.setAttribute('fill', 'url(#royalEmeraldGrad)');
+          goldAccentEls.forEach((el) => el.setAttribute('fill', 'url(#royalGoldGrad)'));
+        } else {
+          emblemCard.classList.remove('emblem-royal-emboss');
+          greenOgeeShield.setAttribute('fill', '#0D6936');
+          goldAccentEls.forEach((el) => el.setAttribute('fill', '#FFE600'));
+        }
+
+        // 7. Label status semasa
+        const activeNames = [];
+        if (state.tilt) activeNames.push('3D Tilt & Kilauan');
+        if (state.stagger) activeNames.push('Animasi Bertahap');
+        if (state.royal) activeNames.push('Emas Diraja & Timbul');
+        if (state.backdrop === 'paper') activeNames.push('Kertas Gading');
+        if (state.backdrop === 'glass') activeNames.push('Zamrud Glassmorphism');
+
+        activeModeLabel.textContent = activeNames.length > 0
+          ? activeNames.join(' + ')
+          : 'Vektor Asal (Flat Vector)';
+
+        // 8. Kemas kini paparan kod eksport
+        renderExportCode();
+      }
+
+      // Penjejakan kursor & sentuhan untuk 3D Tilt + Kilauan Cahaya
+      function handlePointerMove(clientX, clientY) {
+        if (!state.tilt) return;
+        const rect = previewStage.getBoundingClientRect();
+        const normX = ((clientX - rect.left) / rect.width) - 0.5;  // -0.5 hingga 0.5
+        const normY = ((clientY - rect.top) / rect.height) - 0.5;  // -0.5 hingga 0.5
+
+        const rotateY = (normX * 22).toFixed(2);
+        const rotateX = (-normY * 22).toFixed(2);
+        const sheenX = ((normX + 0.5) * 100).toFixed(1);
+        const sheenY = ((normY + 0.5) * 100).toFixed(1);
+
+        emblemCard.style.setProperty('--tilt-x', `${rotateX}deg`);
+        emblemCard.style.setProperty('--tilt-y', `${rotateY}deg`);
+        emblemCard.style.setProperty('--sheen-x', `${sheenX}%`);
+        emblemCard.style.setProperty('--sheen-y', `${sheenY}%`);
+        emblemCard.style.setProperty('--sheen-opacity', '0.95');
+      }
+
+      previewStage.addEventListener('mousemove', (e) => {
+        handlePointerMove(e.clientX, e.clientY);
+      });
+
+      previewStage.addEventListener('mouseleave', () => {
+        if (!state.tilt) return;
+        emblemCard.style.setProperty('--tilt-x', '0deg');
+        emblemCard.style.setProperty('--tilt-y', '0deg');
+        emblemCard.style.setProperty('--sheen-opacity', '0');
+      });
+
+      previewStage.addEventListener('touchmove', (e) => {
+        if (!state.tilt || !e.touches[0]) return;
+        handlePointerMove(e.touches[0].clientX, e.touches[0].clientY);
+      }, { passive: true });
+
+      previewStage.addEventListener('touchend', () => {
+        if (!state.tilt) return;
+        emblemCard.style.setProperty('--tilt-x', '0deg');
+        emblemCard.style.setProperty('--tilt-y', '0deg');
+        emblemCard.style.setProperty('--sheen-opacity', '0');
+      });
+
+      // Acara klik pada 4 pil kesan utama
+      document.querySelectorAll('.effect-pill').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const effect = btn.getAttribute('data-effect');
+          if (effect === 'flat') {
+            state.tilt = false;
+            state.stagger = false;
+            state.royal = false;
+            state.backdrop = 'white';
+          } else if (effect === 'tilt') {
+            state.tilt = !state.tilt;
+          } else if (effect === 'stagger') {
+            state.stagger = !state.stagger;
+            if (state.stagger) triggerStaggerReplay();
+          } else if (effect === 'royal') {
+            state.royal = !state.royal;
+          }
+          syncStudioUI();
+        });
+      });
+
+      // Acara klik pemilih latar pentas
+      document.querySelectorAll('.backdrop-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          state.backdrop = btn.getAttribute('data-backdrop');
+          syncStudioUI();
+        });
+      });
+
+      // Acara klik pemilih saiz pratonton
+      document.querySelectorAll('.size-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetW = parseInt(btn.getAttribute('data-size'), 10);
+          const targetH = Math.round(targetW * (475 / 500));
+          kafaiSvg.setAttribute('width', String(targetW));
+          kafaiSvg.setAttribute('height', String(targetH));
+
+          document.querySelectorAll('.size-btn').forEach((b) => {
+            b.classList.remove('bg-emeraldKafai', 'text-white', 'font-semibold');
+            b.classList.add('text-slate-600', 'font-medium');
+          });
+          btn.classList.remove('text-slate-600', 'font-medium');
+          btn.classList.add('bg-emeraldKafai', 'text-white', 'font-semibold');
+        });
+      });
+
+      // Main semula animasi & set semula
+      btnReplayAnim.addEventListener('click', triggerStaggerReplay);
+      document.getElementById('btnResetAll').addEventListener('click', () => {
+        state.tilt = false;
+        state.stagger = false;
+        state.royal = false;
+        state.backdrop = 'white';
+        syncStudioUI();
+        showToast('Semua kesan telah diset semula kepada Vektor Asal.');
+      });
+
+      // Jana kod SVG tulen dengan import fon terbenam supaya sah dibuka di mana-mana pelayar
+      function buildStandaloneSvgMarkup() {
+        const clone = kafaiSvg.cloneNode(true);
+        clone.removeAttribute('id');
+        clone.removeAttribute('class');
+        clone.setAttribute('width', '500');
+        clone.setAttribute('height', '475');
+
+        const styleEl = document.createElementNS('http://www.w3.org/2000/svg', 'style');
+        styleEl.textContent = `@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Montserrat:wght@900&display=swap');`;
+        clone.insertBefore(styleEl, clone.firstChild);
+
+        const serializer = new XMLSerializer();
+        return '<?xml version="1.0" encoding="UTF-8"?>\n' + serializer.serializeToString(clone);
+      }
+
+      // Jana kod lengkap HTML + CSS + SVG berdasarkan pilihan kesan semasa
+      function buildStandaloneHtmlBundle() {
+        const svgOnly = buildStandaloneSvgMarkup().replace(/^<\?xml[^>]+\?>\n/, '');
+        const extraCss = [];
+
+        if (state.royal) {
+          extraCss.push(`  .kafai-emblem-box {
+    filter: drop-shadow(0 14px 22px rgba(8, 45, 24, 0.26)) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.16));
+  }`);
+        }
+        if (state.stagger) {
+          extraCss.push(`  @keyframes kafaiFadeUp {
+    from { opacity: 0; transform: translateY(14px) scale(0.92); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .kafai-emblem-box .layer-shield { animation: kafaiFadeUp 0.55s ease 0.05s both; }
+  .kafai-emblem-box .layer-wing-left,
+  .kafai-emblem-box .layer-wing-right { animation: kafaiFadeUp 0.55s ease 0.18s both; }
+  .kafai-emblem-box .layer-celestial { animation: kafaiFadeUp 0.50s ease 0.32s both; }
+  .kafai-emblem-box .layer-book { animation: kafaiFadeUp 0.50s ease 0.44s both; }
+  .kafai-emblem-box .layer-cap { animation: kafaiFadeUp 0.45s ease 0.54s both; }
+  .kafai-emblem-box .layer-ribbons { animation: kafaiFadeUp 0.55s ease 0.64s both; }`);
+        }
+        if (state.tilt) {
+          extraCss.push(`  .kafai-emblem-box {
+    transition: transform 0.25s ease;
+  }
+  .kafai-emblem-box:hover {
+    transform: perspective(900px) rotateX(6deg) rotateY(-6deg) scale(1.03);
+  }`);
+        }
+
+        return `<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lencana Rasmi KAFAI AS-SYARIFF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Montserrat:wght@900&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: ${state.backdrop === 'glass' ? '#062315' : state.backdrop === 'paper' ? '#FBF7EC' : '#FFFFFF'};
+    }
+    .kafai-emblem-box {
+      width: min(90vw, 380px);
+    }
+    .kafai-emblem-box svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+${extraCss.join('\n')}
+  </style>
+</head>
+<body>
+  <div class="kafai-emblem-box">
+${svgOnly.split('\n').map((line) => '    ' + line).join('\n')}
+  </div>
+</body>
+</html>`;
+      }
+
+      // Papar kod dalam blok pratonton kod
+      function renderExportCode() {
+        codeOutputBlock.textContent = state.codeTab === 'html'
+          ? buildStandaloneHtmlBundle()
+          : buildStandaloneSvgMarkup();
+      }
+
+      // Tukar tab kod
+      document.querySelectorAll('.code-tab-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          state.codeTab = btn.getAttribute('data-codetab');
+          document.querySelectorAll('.code-tab-btn').forEach((b) => {
+            b.classList.remove('border-emeraldKafai', 'text-emeraldKafai', 'font-semibold');
+            b.classList.add('border-transparent', 'text-slate-500', 'font-medium');
+          });
+          btn.classList.remove('border-transparent', 'text-slate-500', 'font-medium');
+          btn.classList.add('border-emeraldKafai', 'text-emeraldKafai', 'font-semibold');
+          renderExportCode();
+        });
+      });
+
+      // Salin kod ke papan keratan (menggunakan execCommand untuk keserasian iFrame)
+      document.getElementById('btnCopyCode').addEventListener('click', () => {
+        const textToCopy = buildStandaloneHtmlBundle();
+        const textarea = document.createElement('textarea');
+        textarea.value = textToCopy;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand('copy');
+          showToast('Kod lengkap HTML + CSS + SVG berjaya disalin!');
+        } catch (err) {
+          showToast('Sila tandakan kod di bawah dan tekan Ctrl+C / Cmd+C.');
+        }
+        document.body.removeChild(textarea);
+      });
+
+      // Muat turun fail .SVG tulen
+      function triggerSvgFileDownload() {
+        const svgContent = buildStandaloneSvgMarkup();
+        const blob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'logo-kafai-as-syariff.svg';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        showToast('Fail vektor logo-kafai-as-syariff.svg sedang dimuat turun.');
+      }
+
+      document.getElementById('btnDownloadSvg').addEventListener('click', triggerSvgFileDownload);
+      document.getElementById('btnTopDownloadSvg').addEventListener('click', triggerSvgFileDownload);
+
+      // Mulakan paparan awal
+      syncStudioUI();
+    })();
+  </script>
+</body>
+</html>

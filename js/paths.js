@@ -31,3 +31,24 @@ export function siteUrl(path = '') {
 export function siteHref(path = '') {
   return siteUrl(path).href;
 }
+
+/** Laluan data standard. */
+export const PATHS = {
+  data: {
+    anyflip: 'data/anyflip.json',
+    aktiviti: 'data/aktiviti.json',
+    berita: 'data/berita.json',
+    program: 'data/program.json',
+    kurikulum: 'data/kurikulum.json',
+    kepimpinan: 'data/kepimpinan.json',
+    sekolah: 'data/sekolah.json',
+    statistik: 'data/statistik.json',
+    site: 'data/site.json',
+    sitemap: 'data/sitemap.json',
+    books: 'data/books.json',
+    chatbot: 'data/chatbot.json',
+    chatbotKontekst: 'data/chatbot-kontekst.json',
+    searchIndex: 'data/search-index.json',
+    motion: 'data/motion.json'
+  }
+};
