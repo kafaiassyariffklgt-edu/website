@@ -1,0 +1,167 @@
+/* galeri.css — karusel gambar sekolah (halaman utama). Berfungsi tanpa JavaScript
+   melalui CSS scroll-snap; JavaScript menambah kawalan (.is-enhanced). */
+
+.galeri__frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-primary-dark);
+  box-shadow: var(--shadow-lg);
+}
+
+.galeri__track {
+  display: flex;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.galeri__track::-webkit-scrollbar { display: none; }
+
+.galeri__track:focus-visible {
+  outline: 3px solid var(--c-gold);
+  outline-offset: -3px;
+}
+
+.galeri__slide {
+  position: relative;
+  flex: 0 0 100%;
+  margin: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.galeri__slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  background: var(--c-bg-alt);
+}
+
+.galeri__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 3rem 1.25rem 1rem;
+  background: linear-gradient(to top, rgba(4, 30, 18, 0.78), rgba(4, 30, 18, 0));
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+
+.galeri__nav,
+.galeri__bar { display: none; }
+
+.galeri.is-enhanced .galeri__nav { display: inline-flex; }
+.galeri.is-enhanced .galeri__bar { display: flex; }
+
+.galeri__nav {
+  position: absolute;
+  top: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--c-primary-dark);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  transform: translateY(-50%);
+  transition:
+    background-color var(--t-color) var(--ease-out),
+    color var(--t-color) var(--ease-out),
+    transform var(--t-press) var(--ease-out);
+}
+
+.galeri__nav--prev { left: 0.75rem; }
+.galeri__nav--next { right: 0.75rem; }
+
+@media (hover: hover) and (pointer: fine) {
+  .galeri__nav:hover { background: var(--c-primary); color: #fff; }
+}
+
+.galeri__nav:active { transform: translateY(-50%) scale(0.94); }
+
+.galeri__nav:focus-visible,
+.galeri__dot:focus-visible,
+.galeri__play:focus-visible {
+  outline: 3px solid var(--c-gold);
+  outline-offset: 2px;
+}
+
+.galeri__bar {
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.85rem;
+}
+
+.galeri__dots { display: flex; align-items: center; }
+
+.galeri__dot {
+  position: relative;
+  width: 28px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.galeri__dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--c-border-strong, #b9c9bd);
+  transform: translate(-50%, -50%);
+  transition:
+    background-color var(--t-color) var(--ease-out),
+    transform var(--t-base) var(--ease-out);
+}
+
+.galeri__dot[aria-current="true"]::before {
+  background: var(--c-primary);
+  transform: translate(-50%, -50%) scale(1.4);
+}
+
+.galeri__play {
+  min-height: 44px;
+  padding: 0 1rem;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--c-primary-dark);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color var(--t-color) var(--ease-out),
+    border-color var(--t-color) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .galeri__play:hover { border-color: var(--c-primary); background: var(--c-primary-soft); }
+}
+
+@media (max-width: 600px) {
+  .galeri__slide img { aspect-ratio: 16 / 9; }
+  .galeri__caption { padding: 2rem 0.9rem 0.75rem; font-size: 0.82rem; }
+  .galeri__nav { width: 40px; height: 40px; }
+  .galeri__nav--prev { left: 0.4rem; }
+  .galeri__nav--next { right: 0.4rem; }
+}

@@ -6,6 +6,7 @@
     "motto": "علمو سينر هيدوڤ",
     "motto_rumi": "Ilmu Sinar Hidup",
     "cawangan": "Telok Datok · Banting · Kuala Langat",
+    "kod": "BYT1005",
     "ringkas": "Sekolah KAFA Integrasi sesi petang di Telok Datok, Banting, Kuala Langat — mendidik murid dalam Al-Quran, fardu ain, bahasa Arab, Jawi dan akhlak mengikut kurikulum KAFA JAKIM."
   },
   "hubungi": {
@@ -16,34 +17,47 @@
     ],
     "alamat_satu_baris": "Telok Datok, 42700 Banting, Selangor",
     "penanda_aras": "Telok Datok, Banting · bersebelahan bangunan JKR dan Jabatan Perhutanan",
+    "telefon_pejabat": "03-3187 8498",
+    "telefon_pejabat_href": "+60331878498",
     "telefon": "013-665 6964",
     "telefon_href": "+60136656964",
     "whatsapp": "https://wa.me/60136656964",
+    "emel_jais": "byt1005@pendidikanjais.my",
     "emel": "kafaiassyariff.klgt@gmail.com",
     "waktu": "Sesi petang: sekitar 12.30 tengah hari – 5.30 petang",
-    "waktu_nota": "Waktu pejabat belum disahkan · Isnin–Jumaat",
+    "waktu_nota": "Isnin – Jumaat · Sabtu dan Ahad tutup",
     "waktu_penuh": [
       { "hari": "Isnin – Jumaat", "masa": "Sesi persekolahan petang", "buka": true },
       { "hari": "Sabtu – Ahad", "masa": "Tutup", "buka": false }
     ],
-    "waktu_sumber": "Profil sekolah (SIMPENI) dan rekod sekolah; waktu pejabat belum disahkan.",
-    "peta": "https://www.google.com/maps/search/?api=1&query=KAFAI+As-Syarif+Telok+Datok+Banting"
+    "waktu_sumber": "Profil sekolah (SIMPENI) dan rekod sekolah.",
+    "peta": "https://www.google.com/maps/search/?api=1&query=2.8208772,101.5251832&query_place_id=ChIJ8QWQ6lm7zTERMtyEuu6K9zg"
   },
   "media_sosial": {
     "facebook": {
+      "url": "https://www.facebook.com/kafai.assyariff/",
+      "label": "Facebook rasmi KAFAI As-Syariff",
+      "ringkas": "Facebook",
+      "ikon": "facebook"
+    },
+    "facebook_pentadbiran": {
       "url": "https://www.facebook.com/pentadbiran.kafaiassyariff/",
       "label": "Facebook pentadbiran KAFAI As-Syariff",
-      "ringkas": "Facebook"
+      "ringkas": "Pentadbiran",
+      "ikon": "facebook"
     },
     "whatsapp": {
       "url": "https://wa.me/60136656964",
       "label": "WhatsApp KAFAI As-Syariff",
-      "ringkas": "WhatsApp"
+      "ringkas": "WhatsApp",
+      "ikon": "whatsapp"
     }
   },
   "pautan_lain": {
-    "linktree": "https://linktr.ee/KAFAIASTD"
+    "linktree": "https://linktr.ee/KAFAIASTD",
+    "simpeni": "https://simpeni.islam.gov.my/pages/semakan_sekolah_view.php?sek_id=983",
+    "portal_jais": "https://pendidikan.jais.gov.my/"
   },
-  "pengumuman": "Maklumat sekolah, kurikulum, program dan saluran rasmi KAFAI As-Syariff Telok Datok.",
-  "status": "draf"
+  "pengumuman": "Laman web rasmi KAFA Integrasi As-Syariff Telok Datok (BYT1005). Pendaftaran dan pertanyaan waris: lihat halaman Pendaftaran.",
+  "status": "rasmi"
 }

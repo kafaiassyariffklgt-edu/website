@@ -23,6 +23,7 @@ import { initMasaSolatUI } from './modules/masa-solat-ui.js';
 import { initTetapan } from './modules/tetapan.js';
 import { initChatbot } from './modules/chatbot/index.js';
 import { initDataBind } from './modules/data-bind.js';
+import { initGaleri } from './modules/galeri.js';
 
 document.documentElement.classList.add('js-ready');
 
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Isi nombor dan teks daripada data/*.json (HTML menyimpan nilai sandaran).
   await jalankan('data-bind', initDataBind);
+  await jikaWujud('[data-galeri]', 'galeri', initGaleri);
 
   await jalankan('header-footer', mountHeaderFooter);
   await jalankan('nav', initNav);

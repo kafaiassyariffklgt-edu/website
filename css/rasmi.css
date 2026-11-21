@@ -1,0 +1,202 @@
+/* ==========================================================================
+   rasmi.css — tambahan untuk laman web rasmi:
+   program terdekat, kad rujukan, panduan pendaftaran dan borang WhatsApp.
+   Hanya menggunakan token warna sedia ada daripada variables.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Program terdekat (diserlahkan oleh aktiviti.js)
+   -------------------------------------------------------------------------- */
+
+.activity-card.is-nearest {
+  position: relative;
+  border-color: var(--c-gold);
+  box-shadow: 0 0 0 2px var(--c-gold), var(--shadow);
+}
+
+.activity-card.is-nearest::before {
+  content: "Terdekat";
+  position: absolute;
+  top: -0.7rem;
+  right: 1rem;
+  padding: 0.12rem 0.65rem;
+  border-radius: 999px;
+  background: var(--c-gold);
+  color: #3f2f00;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.activity-note {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  border-left: 3px solid var(--c-gold);
+  background: var(--c-bg-alt);
+  color: var(--c-text-soft);
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   Kad rujukan (rak buku digital)
+   -------------------------------------------------------------------------- */
+
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ref-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.ref-card__tag {
+  align-self: flex-start;
+  padding: 0.08rem 0.5rem;
+  border-radius: 999px;
+  background: var(--c-primary-soft);
+  color: var(--c-primary-dark);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.ref-card h3 {
+  margin: 0.2rem 0 0;
+  font-size: 1.02rem;
+}
+
+.ref-card p {
+  flex: 1 1 auto;
+  margin: 0;
+  color: var(--c-text-soft);
+  font-size: 0.9rem;
+}
+
+.ref-card__link {
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.ref-card__link::after {
+  content: " \2197";
+}
+
+/* --------------------------------------------------------------------------
+   Panduan pendaftaran
+   -------------------------------------------------------------------------- */
+
+.doc-checklist {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.doc-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.doc-checklist li::before {
+  content: "\2713";
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--c-primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.doc-checklist strong {
+  display: block;
+}
+
+.doc-checklist span {
+  color: var(--c-text-soft);
+  font-size: 0.9rem;
+}
+
+.cta-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--c-gold);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #fffdf5 0%, #fff8e7 100%);
+}
+
+.cta-panel h3 {
+  margin: 0 0 0.25rem;
+}
+
+.cta-panel p {
+  margin: 0;
+  color: var(--c-text-soft);
+}
+
+/* --------------------------------------------------------------------------
+   Borang pertanyaan waris (WhatsApp)
+   -------------------------------------------------------------------------- */
+
+.form-status {
+  margin-top: 0.85rem;
+  padding: 0.7rem 0.95rem;
+  border-left: 4px solid var(--c-primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--c-primary-soft);
+  color: var(--c-primary-dark);
+  font-size: 0.92rem;
+}
+
+.form-status[hidden] {
+  display: none;
+}
+
+.form-status--error {
+  border-left-color: #b42318;
+  background: #fdecea;
+  color: #7a1a12;
+}
+
+.form-fallback {
+  margin-top: 0.6rem;
+  color: var(--c-text-soft);
+  font-size: 0.85rem;
+}
+
+/* Jawi / Arab: fon jelas dan saiz yang selesa dibaca. */
+[lang="ar"] {
+  font-family: var(--font-arabic);
+  line-height: 1.7;
+}

@@ -61,9 +61,13 @@ const PENJANA = {
 
   hubungan: ({ sekolah: s }) =>
     `Alamat: ${s.alamat}. ` +
-    `Telefon dan WhatsApp: ${s.telefon}. ` +
-    `E-mel: ${s.emel}. ` +
+    `Telefon pejabat: ${s.telefonPejabat}. ` +
+    `Telefon dan WhatsApp pentadbiran: ${s.telefon}. ` +
+    `E-mel pentadbiran: ${s.emel}. ` +
+    `E-mel JAIS: ${s.emelJais}. ` +
+    `Facebook rasmi: ${s.facebookRasmi}. ` +
     `Facebook pentadbiran: ${s.facebook}. ` +
+    `Linktree: ${s.linktree}. ` +
     `Lokasi bersebelahan ${s.lokasiBersebelahan}. ` +
     `Peta: ${s.peta}`,
 

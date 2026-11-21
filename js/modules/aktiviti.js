@@ -100,10 +100,34 @@ function cardMedia(item) {
   </div>`;
 }
 
-function renderCard(item) {
-  const localUrl = detailUrl(item);
+const NOTA_SALURAN =
+  'Maklumat masa dan dewan akan dimaklumkan menerusi saluran rasmi ' +
+  '<a href="https://linktr.ee/KAFAIASTD" target="_blank" rel="noopener noreferrer">Linktree</a> ' +
+  'dan <a href="https://www.facebook.com/kafai.assyariff/" target="_blank" rel="noopener noreferrer">Facebook</a> sekolah.';
 
-  return `<article class="card activity-card">
+/** Program disahkan, bukan sorotan, belum berlalu — terdekat dahulu. */
+function upcomingItems(items) {
+  const today = todayISO();
+  return sortedAscending(
+    items.filter(
+      (item) =>
+        item.status === 'disahkan' && !item.sorotan && item.tarikh && item.tarikh >= today
+    )
+  );
+}
+
+/** Nota untuk program akan datang yang masa atau tempatnya belum dimuktamadkan. */
+function statusNote(item) {
+  const upcoming = item.tarikh && item.tarikh >= todayISO();
+  if (!upcoming || (item.masa && item.lokasi)) return '';
+  return `<p class="activity-note">${NOTA_SALURAN}</p>`;
+}
+
+function renderCard(item, options = {}) {
+  const localUrl = detailUrl(item);
+  const nearest = options.nearest ? ' is-nearest' : '';
+
+  return `<article class="card activity-card${nearest}" data-tarikh="${esc(item.tarikh || '')}">
     ${cardMedia(item)}
     <div class="card__body">
       ${itemMeta(item)}
@@ -170,6 +194,7 @@ function renderDetail(item) {
     <h2 class="activity-detail__title" tabindex="-1">${esc(item.tajuk || '')}</h2>
     <p class="activity-detail__lead">${esc(item.ringkas || '')}</p>
     ${item.lokasi ? `<p class="activity-detail__place"><strong>Lokasi:</strong> ${esc(item.lokasi)}</p>` : ''}
+    ${statusNote(item)}
     ${detailGallery(item)}
     ${fullCaption(item)}
     ${anyflipButton(item)}
@@ -184,6 +209,7 @@ function renderDetail(item) {
 function renderList(items, list, filter, count) {
   const categories = ['Semua', ...new Set(items.map((item) => item.kategori).filter(Boolean))];
   let active = 'Semua';
+  const nearestId = upcomingItems(items)[0]?.id;
 
   const paint = () => {
     const shown = sorted(
@@ -191,7 +217,7 @@ function renderList(items, list, filter, count) {
     );
 
     list.innerHTML = shown.length
-      ? shown.map(renderCard).join('')
+      ? shown.map((item) => renderCard(item, { nearest: item.id === nearestId })).join('')
       : '<p class="empty">Belum ada program untuk dipaparkan.</p>';
 
     if (count) {
@@ -232,7 +258,11 @@ export async function initAktiviti() {
     items = await loadItems();
   } catch (error) {
     console.error('Program: gagal memuat data -', error.message);
-    list.innerHTML = '<p class="empty">Data program tidak dapat dimuatkan.</p>';
+    // Senarai statik daripada HTML kekal jika ada; mesej ralat hanya jika kosong.
+    if (!list.children.length) {
+      list.innerHTML = '<p class="empty">Data program tidak dapat dimuatkan.</p>';
+    }
+    list.setAttribute('aria-busy', 'false');
     return;
   }
 
@@ -253,7 +283,7 @@ export async function initAktiviti() {
     }
 
     detail.innerHTML = renderDetail(item);
-    document.title = `${item.tajuk} | Program | KAFAI As-Syariff (draf)`;
+    document.title = `${item.tajuk} | Program | KAFAI As-Syariff Telok Datok (BYT1005)`;
     detail.querySelector('.activity-detail__title')?.focus();
     return;
   }
@@ -268,7 +298,10 @@ export async function initAktiviti() {
 
 /**
  * Senarai program akan datang untuk halaman utama.
- * Program sorotan dikecualikan kerana ia sudah dipaparkan dalam bahagian
+ * Senarai statik dalam HTML (dijana oleh tools/bina-statik.mjs) dipaparkan
+ * dahulu supaya pelayar tanpa JavaScript dan enjin carian boleh membacanya.
+ * Modul ini hanya menapis program yang sudah berlalu dan menyerlahkan yang
+ * terdekat. Program sorotan dikecualikan kerana ia sudah ada dalam bahagian
  * Sorotan, dan program yang belum disahkan tidak dimasukkan.
  */
 export async function initProgramSeterusnya() {
@@ -279,16 +312,7 @@ export async function initProgramSeterusnya() {
 
   try {
     const items = await loadItems();
-    const today = todayISO();
-    const upcoming = sortedAscending(
-      items.filter(
-        (item) =>
-          item.status === 'disahkan' &&
-          !item.sorotan &&
-          item.tarikh &&
-          item.tarikh >= today
-      )
-    ).slice(0, 4);
+    const upcoming = upcomingItems(items).slice(0, 4);
 
     if (!upcoming.length) {
       host.innerHTML =
@@ -297,16 +321,20 @@ export async function initProgramSeterusnya() {
         esc(siteHref('pages/program.html')) +
         '">Program</a> untuk kalendar penuh.</p>';
       if (count) count.textContent = 'Tiada program akan datang.';
+      host.setAttribute('aria-busy', 'false');
       return;
     }
 
-    host.innerHTML = upcoming.map(renderCard).join('');
+    host.innerHTML = upcoming
+      .map((item, index) => renderCard(item, { nearest: index === 0 }))
+      .join('');
     if (count) {
       count.textContent = `${upcoming.length} program akan datang dipaparkan.`;
     }
   } catch (error) {
+    // Senarai statik daripada HTML dikekalkan apabila data gagal dimuat.
     console.error('Program seterusnya: gagal memuat data -', error.message);
-    host.innerHTML =
-      '<p class="empty">Program akan datang tidak dapat dimuatkan.</p>';
+  } finally {
+    host.setAttribute('aria-busy', 'false');
   }
 }

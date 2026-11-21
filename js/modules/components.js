@@ -37,6 +37,15 @@ const BASE_MENU = [
     ],
   },
   {
+    label: 'Pendaftaran',
+    href: '/pages/pendaftaran.html',
+    sub: [
+      { label: 'Panduan pendaftaran', href: '/pages/pendaftaran.html' },
+      { label: 'Dokumen diperlukan', href: '/pages/pendaftaran.html#dokumen' },
+      { label: 'Soalan lazim waris', href: '/pages/pendaftaran.html#soalan-lazim' },
+    ],
+  },
+  {
     label: 'Bahan Bacaan',
     href: '/pages/bahan-bacaan.html',
     sub: [
@@ -67,7 +76,8 @@ const FOOTER_LINKS = [
   { label: 'Kepimpinan', href: '/pages/kepimpinan.html' },
   { label: 'Kurikulum', href: '/pages/kurikulum.html' },
   { label: 'Program', href: '/pages/program.html' },
-  { label: 'Bahan Bacaan', href: '/pages/bahan-bacaan.html' },
+  { label: 'Pendaftaran', href: '/pages/pendaftaran.html' },
+  { label: 'Bahan bacaan', href: '/pages/bahan-bacaan.html' },
   { label: 'Jaringan', href: '/pages/jaringan.html' },
   { label: 'Berita', href: '/pages/berita.html' },
   { label: 'Hubungi', href: '/pages/hubungi.html' },
@@ -87,29 +97,45 @@ const FALLBACK = {
   },
   hubungi: {
     alamat: ['Telok Datok,', '42700 Banting,', 'Selangor'],
+    telefon_pejabat: '03-3187 8498',
+    telefon_pejabat_href: '+60331878498',
     telefon: '013-665 6964',
     telefon_href: '+60136656964',
     whatsapp: 'https://wa.me/60136656964',
+    emel_jais: 'byt1005@pendidikanjais.my',
     emel: 'kafaiassyariff.klgt@gmail.com',
     waktu: 'Sesi petang: sekitar 12.30 tengah hari – 5.30 petang',
-    waktu_nota: 'Waktu pejabat belum disahkan · Isnin–Jumaat',
-    peta: 'https://www.google.com/maps/search/?api=1&query=KAFAI+As-Syarif+Telok+Datok+Banting',
+    waktu_nota: 'Isnin – Jumaat · Sabtu dan Ahad tutup',
+    peta: 'https://www.google.com/maps/search/?api=1&query=2.8208772,101.5251832&query_place_id=ChIJ8QWQ6lm7zTERMtyEuu6K9zg',
   },
   media_sosial: {
     facebook: {
+      url: 'https://www.facebook.com/kafai.assyariff/',
+      label: 'Facebook rasmi KAFAI As-Syariff',
+      ringkas: 'Facebook',
+      ikon: 'facebook',
+    },
+    facebook_pentadbiran: {
       url: 'https://www.facebook.com/pentadbiran.kafaiassyariff/',
       label: 'Facebook pentadbiran KAFAI As-Syariff',
-      ringkas: 'Facebook',
+      ringkas: 'Pentadbiran',
+      ikon: 'facebook',
     },
     whatsapp: {
       url: 'https://wa.me/60136656964',
       label: 'WhatsApp KAFAI As-Syariff',
       ringkas: 'WhatsApp',
+      ikon: 'whatsapp',
     },
   },
-  pautan_lain: { linktree: 'https://linktr.ee/KAFAIASTD' },
-  pengumuman: 'Maklumat sekolah, kurikulum, program dan saluran rasmi KAFAI As-Syariff Telok Datok.',
-  status: 'draf',
+  pautan_lain: {
+    linktree: 'https://linktr.ee/KAFAIASTD',
+    simpeni: 'https://simpeni.islam.gov.my/pages/semakan_sekolah_view.php?sek_id=983',
+    portal_jais: 'https://pendidikan.jais.gov.my/',
+  },
+  pengumuman:
+    'Laman web rasmi KAFA Integrasi As-Syariff Telok Datok (BYT1005). Pendaftaran dan pertanyaan waris: lihat halaman Pendaftaran.',
+  status: 'rasmi',
 };
 
 const ICON = {
@@ -242,7 +268,7 @@ function socialItems(site, className = 'social-link') {
   return Object.entries(social)
     .filter(([, value]) => value && value.url)
     .map(([key, value]) => {
-      const icon = ICON[key];
+      const icon = ICON[value.ikon || key];
       if (!icon) return '';
       return `<li><a class="${className}" href="${esc(value.url)}" target="_blank"
         rel="noopener noreferrer" aria-label="${esc(value.label)}" title="${esc(
@@ -265,7 +291,13 @@ function mastheadContact(site) {
       </p>
       <p class="masthead__contact-row">
         <span class="masthead__contact-icon">${svg(CONTACT_ICON.phone, '0 0 16 16')}</span>
-        <a href="tel:${esc(c.telefon_href || '')}">${esc(c.telefon || '')}</a>
+        <span>
+          ${
+            c.telefon_pejabat
+              ? `<a href="tel:${esc(c.telefon_pejabat_href || '')}">${esc(c.telefon_pejabat)}</a> · `
+              : ''
+          }<a href="tel:${esc(c.telefon_href || '')}">${esc(c.telefon || '')}</a>
+        </span>
       </p>
     </div>`;
 }
@@ -276,12 +308,20 @@ function footerContact(site) {
   return `
     <ul class="footer__contact">
       <li>${svg(CONTACT_ICON.pin, '0 0 16 16', 'icon icon--footer')}<span>${address}</span></li>
-      <li>${svg(CONTACT_ICON.phone, '0 0 16 16', 'icon icon--footer')}<a href="tel:${esc(
-        c.telefon_href || ''
-      )}">${esc(c.telefon || '')}</a></li>
-      <li>${svg(CONTACT_ICON.mail, '0 0 16 16', 'icon icon--footer')}<a href="mailto:${esc(
-        c.emel || ''
-      )}">${esc(c.emel || '')}</a></li>
+      <li>${svg(CONTACT_ICON.phone, '0 0 16 16', 'icon icon--footer')}<span>${
+        c.telefon_pejabat
+          ? `<a href="tel:${esc(c.telefon_pejabat_href || '')}">${esc(
+              c.telefon_pejabat
+            )}</a> <small>(pejabat)</small><br>`
+          : ''
+      }<a href="tel:${esc(c.telefon_href || '')}">${esc(
+        c.telefon || ''
+      )}</a> <small>(pentadbiran / WhatsApp)</small></span></li>
+      <li>${svg(CONTACT_ICON.mail, '0 0 16 16', 'icon icon--footer')}<span>${
+        c.emel_jais
+          ? `<a href="mailto:${esc(c.emel_jais)}">${esc(c.emel_jais)}</a><br>`
+          : ''
+      }<a href="mailto:${esc(c.emel || '')}">${esc(c.emel || '')}</a></span></li>
       <li>${svg(CONTACT_ICON.clock, '0 0 16 16', 'icon icon--footer')}<span>${esc(
         c.waktu || ''
       )}<br><small>${esc(c.waktu_nota || '')}</small></span></li>
@@ -519,9 +559,12 @@ export async function mountHeaderFooter() {
             </div>
           </div>
 
-          <div class="footer__bottom">
-            <p>© <span id="footer-year">${year}</span> ${esc(org.nama)}. Hak cipta terpelihara.</p>
-            <p class="footer__draft">Draf dalaman · Belum disahkan untuk penerbitan.</p>
+                    <div class="footer__bottom">
+            <p>© <span id="footer-year">${year}</span> ${esc(org.nama)} (${esc(org.kod || 'BYT1005')}). Hak cipta terpelihara.</p>
+            <p class="footer__official">Laman Web Rasmi Sekolah ${esc(org.nama)} (${esc(
+              org.kod || 'BYT1005'
+            )}). Maklumat peribadi dikendalikan mengikut Akta Perlindungan Data Peribadi 2010 (PDPA).
+              Tiada data peribadi murid disiarkan di laman ini.</p>
           </div>
         </div>
       </footer>`;

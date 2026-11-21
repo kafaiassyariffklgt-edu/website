@@ -407,6 +407,12 @@
   animation: m-rise var(--t-base) var(--ease-out) both;
 }
 
+.form__status--error {
+  background: #fdecea;
+  border: 1px solid #f3c3bd;
+  color: #7a1a12;
+}
+
 .form__status--ok {
   background: #e7f6ec;
   border: 1px solid #b5e3c3;

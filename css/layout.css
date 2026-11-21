@@ -1181,6 +1181,13 @@
   margin: 0;
 }
 
+.footer__official {
+  max-width: 62ch;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
 .footer__draft {
   color: var(--c-gold);
 }
