@@ -16,7 +16,12 @@ Guru dan Murid terkini.txt
 .wrangler/
 .dev.vars
 
-# Remote MCP (FileBridge) — log dan fail sambungan mengandungi token
+# Remote MCP (FileBridge) - log dan fail sambungan mengandungi token
 .mcp-tunnel.log
 .mcp-tunnel.out.log
 mcp-connection.txt
+
+# Alat MCP/OpenCode tempatan (bukan bahagian laman awam)
+connect_mcp_opencode.bat
+start_mcp_tool.bat
+opencode.json

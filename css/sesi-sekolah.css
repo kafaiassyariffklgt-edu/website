@@ -1,0 +1,291 @@
+/* ==========================================================================
+   sesi-sekolah.css — segmen kedua bar waktu solat: status sesi persekolahan
+   ========================================================================== */
+
+.prayerbar__bar {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  min-width: 0;
+}
+
+.prayerbar__bar .prayerbar__summary {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.sessionbar {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-width: 0;
+}
+
+.sessionbar::before {
+  content: "";
+  align-self: center;
+  width: 1px;
+  height: 28px;
+  margin-inline: clamp(0.35rem, 0.2rem + 0.5vw, 0.8rem);
+  background: rgba(19, 122, 74, 0.16);
+}
+
+.sessionbar__toggle {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0.2rem 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--c-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--t-color) var(--ease-out);
+}
+
+.sessionbar__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c-primary);
+  box-shadow: 0 0 0 4px rgba(19, 122, 74, 0.12);
+  transition:
+    background-color var(--t-color) var(--ease-out),
+    box-shadow var(--t-color) var(--ease-out);
+}
+
+.sessionbar[data-state="sebelum"] .sessionbar__dot {
+  background: #c9971a;
+  box-shadow: 0 0 0 4px rgba(201, 151, 26, 0.16);
+}
+
+.sessionbar[data-state="tamat"] .sessionbar__dot,
+.sessionbar[data-state="cuti"] .sessionbar__dot {
+  background: #9aa8a0;
+  box-shadow: 0 0 0 4px rgba(154, 168, 160, 0.16);
+}
+
+.sessionbar__text {
+  display: block;
+  min-width: 0;
+}
+
+.sessionbar__label {
+  display: block;
+  color: var(--c-text-soft);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.sessionbar__status {
+  display: block;
+  margin-top: 0.1rem;
+  overflow: hidden;
+  color: var(--c-primary-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sessionbar__status--short {
+  display: none;
+}
+
+.sessionbar[data-state="tamat"] .sessionbar__status,
+.sessionbar[data-state="cuti"] .sessionbar__status {
+  color: var(--c-text-soft);
+}
+
+.sessionbar__caret {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+}
+
+.sessionbar__toggle[aria-expanded="true"] .prayerbar__toggle-icon::before {
+  transform: translateY(2px) rotate(225deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sessionbar__toggle:hover {
+    background: rgba(232, 243, 234, 0.42);
+  }
+
+  .sessionbar__toggle:hover .sessionbar__caret {
+    background: var(--c-primary-dark);
+    box-shadow:
+      0 6px 18px rgba(19, 122, 74, 0.38),
+      0 2px 5px rgba(8, 51, 31, 0.2);
+    transform: translateY(-1px) scale(1.04);
+  }
+}
+
+.sessionbar__toggle:active .sessionbar__caret {
+  transform: scale(var(--press-scale-sm));
+}
+
+/* Panel butiran — corak sama seperti senarai waktu solat ------------------ */
+
+.sessionbar__details[hidden] {
+  display: none;
+}
+
+.sessionbar__details {
+  position: relative;
+  padding: 1rem 0 1.05rem;
+  border-top: 1px solid rgba(19, 122, 74, 0.1);
+}
+
+.sessionbar__details:not([hidden]) {
+  animation: prayer-details-in var(--t-base) var(--ease-out) both;
+}
+
+.sessionbar__details .prayerbar__details-head {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sessionbar__details-meta {
+  margin: 0;
+  color: var(--c-text-soft);
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+.sessionbar__headline {
+  margin: 0;
+  color: var(--c-primary-dark);
+  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.sessionbar__countdown {
+  margin: 0.18rem 0 0;
+  color: var(--c-text-soft);
+  font-size: 0.74rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.sessionbar__week {
+  margin-top: 0.9rem;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.sessionbar__day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.22rem;
+  min-height: 78px;
+  padding: 0.62rem 0.4rem;
+}
+
+.sessionbar__day-name {
+  color: var(--c-text-soft);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.sessionbar__day-time {
+  color: var(--c-text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.sessionbar__day[data-buka="false"] .sessionbar__day-time {
+  color: var(--c-text-soft);
+  font-weight: 500;
+}
+
+.sessionbar__day.is-today {
+  border-color: rgba(19, 122, 74, 0.42);
+  background:
+    linear-gradient(145deg, rgba(236, 248, 238, 0.98), rgba(218, 239, 222, 0.92));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 10px 28px rgba(19, 122, 74, 0.14);
+}
+
+.sessionbar__day.is-today .sessionbar__day-name {
+  color: var(--c-primary-dark);
+}
+
+@media (max-width: 900px) {
+  .sessionbar__label {
+    display: none;
+  }
+
+  .sessionbar__status {
+    display: none;
+  }
+
+  .sessionbar__status--short {
+    display: block;
+    margin-top: 0;
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .sessionbar__caret {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sessionbar__week {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .sessionbar__day {
+    min-height: 68px;
+  }
+}
+
+@media (max-width: 560px) {
+  .sessionbar__details .prayerbar__details-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .sessionbar__details-meta {
+    text-align: left;
+  }
+}
+
+@media (max-width: 420px) {
+  .sessionbar__text {
+    display: none;
+  }
+
+  .sessionbar__toggle {
+    gap: 0.35rem;
+  }
+
+  .sessionbar__caret {
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -106,6 +106,12 @@ const FALLBACK = {
     emel: 'kafaiassyariff.klgt@gmail.com',
     waktu: 'Sesi petang: sekitar 12.30 tengah hari – 5.30 petang',
     waktu_nota: 'Isnin – Jumaat · Sabtu dan Ahad tutup',
+    sesi: {
+      mula: '14:30',
+      tamat: '17:30',
+      hari: [1, 2, 3, 4, 5],
+      nota: 'Isnin – Jumaat · Sabtu dan Ahad tutup',
+    },
     peta: 'https://www.google.com/maps/search/?api=1&query=2.8208772,101.5251832&query_place_id=ChIJ8QWQ6lm7zTERMtyEuu6K9zg',
   },
   media_sosial: {
@@ -339,6 +345,14 @@ async function loadSite() {
   }
 }
 
+function masa12(nilai, sandaran = nilai) {
+  try {
+    return formatMasa12Jam(nilai);
+  } catch {
+    return sandaran;
+  }
+}
+
 export async function mountHeaderFooter() {
   const header = document.getElementById('site-header');
   const footer = document.getElementById('site-footer');
@@ -347,6 +361,12 @@ export async function mountHeaderFooter() {
   const site = await loadSite();
   const org = site.organisasi || FALLBACK.organisasi;
   const contact = site.hubungi || FALLBACK.hubungi;
+  const sesi = contact.sesi || {};
+  const sesiHari =
+    Array.isArray(sesi.hari) && sesi.hari.length ? sesi.hari : [1, 2, 3, 4, 5];
+  const sesiMula = sesi.mula || '14:30';
+  const sesiTamat = sesi.tamat || '17:30';
+  const labelSesi = `${masa12(sesiMula)} – ${masa12(sesiTamat)}`;
 
   if (header) {
     const initialDate = todayISO();
@@ -406,8 +426,12 @@ export async function mountHeaderFooter() {
       </nav>
 
       <section class="prayerbar" data-prayerbar data-state="loading" aria-busy="true"
-               aria-label="Waktu solat">
+               aria-label="Waktu solat dan sesi persekolahan"
+               data-sesi-mula="${esc(sesiMula)}"
+               data-sesi-tamat="${esc(sesiTamat)}"
+               data-sesi-hari="${sesiHari.join(',')}">
         <div class="container prayerbar__inner">
+          <div class="prayerbar__bar">
           <div class="prayerbar__summary">
             <button class="prayerbar__toggle m-focus" type="button"
                     aria-expanded="false" aria-controls="prayerbar-details"
@@ -427,6 +451,24 @@ export async function mountHeaderFooter() {
               <span class="prayerbar__toggle-icon" aria-hidden="true"></span>
             </button>
           </div>
+
+          <div class="sessionbar" data-sessionbar data-state="loading">
+            <button class="sessionbar__toggle m-focus" type="button"
+                    data-session-toggle aria-expanded="false"
+                    aria-controls="sessionbar-details"
+                    aria-label="Status sesi persekolahan. Memuatkan.">
+              <span class="sessionbar__dot" aria-hidden="true"></span>
+              <span class="sessionbar__text">
+                <span class="sessionbar__label">Sesi persekolahan</span>
+                <span class="sessionbar__status" data-session-status>${labelSesi}</span>
+                <span class="sessionbar__status sessionbar__status--short"
+                      data-session-status-short>${labelSesi}</span>
+              </span>
+              <span class="prayerbar__toggle-icon sessionbar__caret" aria-hidden="true"></span>
+            </button>
+          </div>
+          </div>
+
           <div class="prayerbar__details" id="prayerbar-details" data-prayer-details hidden>
             <div class="prayerbar__details-head">
               <h2 class="prayerbar__details-title" id="prayerbar-title">Waktu solat</h2>
@@ -476,6 +518,20 @@ export async function mountHeaderFooter() {
               </button>
             </div>
             <p class="prayerbar__status" data-prayer-status role="status" hidden></p>
+          </div>
+
+          <div class="sessionbar__details" id="sessionbar-details" data-session-details hidden>
+            <div class="prayerbar__details-head">
+              <h2 class="prayerbar__details-title" id="sessionbar-title">Sesi persekolahan</h2>
+              <p class="sessionbar__details-meta">${esc(sesi.nota || 'Isnin – Jumaat')}</p>
+            </div>
+            <p class="sessionbar__headline" data-session-headline aria-live="polite">Memuatkan status sesi…</p>
+            <p class="sessionbar__countdown" data-session-countdown></p>
+            <ul class="prayerbar__times sessionbar__week" data-session-week
+                aria-label="Jadual sesi persekolahan mingguan"></ul>
+            <div class="prayerbar__meta">
+              <p>Waktu Malaysia (MYT) · <span data-session-source>Jadual sekolah</span></p>
+            </div>
           </div>
         </div>
       </section>

@@ -88,6 +88,16 @@ function setButiranTerbuka(host, terbuka) {
   button.setAttribute('aria-label', `${tindakan} ${host.dataset.nextAria || ''}`.trim());
 }
 
+function tutupSesi(host) {
+  const sesi = host.querySelector('[data-sessionbar]');
+  if (!sesi) return;
+  const butang = sesi.querySelector('[data-session-toggle]');
+  const butiran = host.querySelector('[data-session-details]');
+  if (butang) butang.setAttribute('aria-expanded', 'false');
+  if (butiran) butiran.hidden = true;
+  sesi.classList.remove('is-open');
+}
+
 function kosongkanWaktu(host) {
   for (const elem of host.querySelectorAll('[data-prayer-time]')) {
     elem.textContent = '—';
@@ -368,7 +378,9 @@ export function initMasaSolatUI() {
   }
 
   toggle?.addEventListener('click', () => {
-    setButiranTerbuka(host, toggle.getAttribute('aria-expanded') !== 'true');
+    const buka = toggle.getAttribute('aria-expanded') !== 'true';
+    if (buka) tutupSesi(host);
+    setButiranTerbuka(host, buka);
   });
   refresh?.addEventListener('click', () => void muatData(true));
 

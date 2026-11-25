@@ -76,6 +76,17 @@
     "sumber": "Kalendar program sekolah (data awam)."
   },
   {
+    "id": 8,
+    "slug": "hari-komunikasi-uasa-2026",
+    "tarikh": "2026-11-23",
+    "tajuk": "Hari Komunikasi UASA",
+    "kategori": "Murid & Ibu Bapa",
+    "status": "disahkan",
+    "ringkas": "Penyerahan laporan UASA 2026 kepada ibu bapa atau penjaga.",
+    "caption": "Hari komunikasi antara sekolah dan ibu bapa / penjaga bagi penyerahan laporan UASA 2026. Laporan individu tidak disiarkan di laman awam. Tarikh dikemas kini kepada 23 November 2026 mengikut jadual terkini sekolah.",
+    "sumber": "Jadual program akhir tahun 2026 (dikemas kini pihak sekolah, 24 November 2026)."
+  },
+  {
     "id": 7,
     "slug": "kursus-pembugaran-2-2026",
     "tarikh": "2026-11-24",
@@ -87,26 +98,37 @@
     "sumber": "Kalendar program sekolah (data awam)."
   },
   {
-    "id": 8,
-    "slug": "hari-komunikasi-uasa-2026",
-    "tarikh": "2026-11-26",
-    "tajuk": "Hari Komunikasi UASA",
-    "kategori": "Murid & Ibu Bapa",
-    "status": "disahkan",
-    "ringkas": "Penyerahan laporan UASA 2026 kepada ibu bapa atau penjaga.",
-    "caption": "Hari komunikasi antara sekolah dan ibu bapa / penjaga bagi penyerahan laporan UASA 2026. Laporan individu tidak disiarkan di laman awam.",
-    "sumber": "Kalendar program sekolah (data awam)."
-  },
-  {
     "id": 9,
     "slug": "jamuan-akhir-tahun-2026",
-    "tarikh": "2026-12-01",
+    "tarikh": "2026-11-27",
     "tajuk": "Jamuan Akhir Tahun",
     "kategori": "Majlis",
-    "status": "draf",
-    "ringkas": "Cadangan jamuan akhir tahun sekolah.",
-    "caption": "Tarikh cadangan. Belum disahkan sebagai program rasmi.",
-    "sumber": "Kalendar program sekolah (data awam)."
+    "status": "disahkan",
+    "ringkas": "Jamuan akhir tahun sekolah.",
+    "caption": "Jamuan akhir tahun mengikut jadual terkini sekolah. Butiran masa dan dewan akan dimaklumkan menerusi saluran rasmi sekolah (Linktree dan Facebook).",
+    "sumber": "Jadual program akhir tahun 2026 (dikemas kini pihak sekolah, 24 November 2026)."
+  },
+  {
+    "id": 14,
+    "slug": "watikah-pengawas-2026",
+    "tarikh": "2026-11-30",
+    "tajuk": "Watikah Pengawas",
+    "kategori": "Majlis",
+    "status": "disahkan",
+    "ringkas": "Penyerahan watikah pengawas sekolah.",
+    "caption": "Program watikah pengawas mengikut jadual terkini sekolah. Butiran masa dan tempat akan dimaklumkan menerusi saluran rasmi sekolah (Linktree dan Facebook).",
+    "sumber": "Jadual program akhir tahun 2026 (dikemas kini pihak sekolah, 24 November 2026)."
+  },
+  {
+    "id": 15,
+    "slug": "raptai-hkm-2026",
+    "tarikh": "2026-12-01",
+    "tajuk": "Raptai HKM",
+    "kategori": "Majlis",
+    "status": "disahkan",
+    "ringkas": "Raptai persiapan program HKM.",
+    "caption": "Raptai persiapan program HKM mengikut jadual terkini sekolah. Butiran masa dan tempat akan dimaklumkan menerusi saluran rasmi sekolah (Linktree dan Facebook).",
+    "sumber": "Jadual program akhir tahun 2026 (dikemas kini pihak sekolah, 24 November 2026)."
   },
   {
     "id": 10,

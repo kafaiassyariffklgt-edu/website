@@ -31,8 +31,15 @@
     "tajuk": "Program Sekolah",
     "url": "pages/program.html",
     "jenis": "Halaman",
-    "keterangan": "Kalendar program sekolah daripada data awam, termasuk majlis, kursus dan peperiksaan.",
-    "kata_kunci": "program aktiviti kalendar majlis khatam psra uasa kursus gotong royong lawatan"
+    "keterangan": "Kalendar program sekolah, termasuk majlis, kursus, jamuan akhir tahun, watikah pengawas dan HKM.",
+    "kata_kunci": "program aktiviti kalendar majlis khatam psra uasa kursus pembugaran jamuan akhir tahun watikah pengawas hkm gotong royong lawatan hari terakhir persekolahan"
+  },
+  {
+    "tajuk": "Pendaftaran Murid & Maklumat Waris",
+    "url": "pages/pendaftaran.html",
+    "jenis": "Halaman",
+    "keterangan": "Syarat kemasukan Tahun 1 hingga 6, dokumen diperlukan, waktu operasi dan soalan lazim waris.",
+    "kata_kunci": "pendaftaran daftar murid waris ibu bapa kemasukan sijil lahir mykid kad pengenalan rekod sekolah rendah tahun 1 tahun 6 waktu operasi sesi petang"
   },
   {
     "tajuk": "Pencapaian",
@@ -59,15 +66,15 @@
     "tajuk": "Hubungi Kami",
     "url": "pages/hubungi.html",
     "jenis": "Halaman",
-    "keterangan": "Alamat, telefon, WhatsApp, emel, peta dan borang demo.",
+    "keterangan": "Alamat, dua talian telefon, WhatsApp, dua e-mel, peta dan borang pertanyaan waris melalui WhatsApp.",
     "kata_kunci": "hubungi telefon whatsapp emel alamat peta lokasi facebook linktree"
   },
   {
     "tajuk": "Bahan Bacaan",
     "url": "pages/bahan-bacaan.html",
     "jenis": "Halaman",
-    "keterangan": "Rak buku digital dan bahan bacaan. Tiada fail buku diterbitkan lagi.",
-    "kata_kunci": "bahan bacaan buku pdf rak perpustakaan"
+    "keterangan": "Rujukan rasmi (JAKIM, JAIS, e-Solat SGR03, Linktree) dan rak buku digital.",
+    "kata_kunci": "bahan bacaan rujukan buku pdf rak perpustakaan sukatan kafa jakim upkk psra waktu solat sgr03 linktree"
   },
   {
     "tajuk": "Jaringan & Rujukan",

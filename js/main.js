@@ -20,6 +20,7 @@ import { initMapButtons } from './modules/mapbtn.js';
 import { initTicker } from './modules/ticker.js';
 import { initSorotan } from './modules/sorotan.js';
 import { initMasaSolatUI } from './modules/masa-solat-ui.js';
+import { initSesiSekolah } from './modules/sesi-sekolah.js';
 import { initTetapan } from './modules/tetapan.js';
 import { initChatbot } from './modules/chatbot/index.js';
 import { initDataBind } from './modules/data-bind.js';
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   await jalankan('header-footer', mountHeaderFooter);
   await jalankan('nav', initNav);
   await jalankan('masa-solat', initMasaSolatUI);
+  await jalankan('sesi-sekolah', initSesiSekolah);
   await jalankan('carian', initSearch);
   await jalankan('borang', initForms);
   await jalankan('butang-peta', initMapButtons);

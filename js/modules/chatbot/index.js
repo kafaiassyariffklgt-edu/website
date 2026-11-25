@@ -89,7 +89,7 @@ function binaWidget(konfigurasi) {
   launcherLogo.append(launcherImg);
 
   const launcherText = el('span', 'asyabot-launcher__text');
-  launcherText.append(el('strong', '', 'ASY-SYARIFF'), el('span', '', 'BOT'));
+  launcherText.append(el('strong', '', 'TANYA KAFAI'), el('span', '', 'AS-SYARIFF'));
   launcher.append(launcherLogo, launcherText);
 
   // ---------- Dialog ----------

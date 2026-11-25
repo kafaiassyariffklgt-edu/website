@@ -30,6 +30,12 @@
       { "hari": "Isnin – Jumaat", "masa": "Sesi persekolahan petang", "buka": true },
       { "hari": "Sabtu – Ahad", "masa": "Tutup", "buka": false }
     ],
+    "sesi": {
+      "mula": "14:30",
+      "tamat": "17:30",
+      "hari": [1, 2, 3, 4, 5],
+      "nota": "Isnin – Jumaat · Sabtu dan Ahad tutup"
+    },
     "waktu_sumber": "Profil sekolah (SIMPENI) dan rekod sekolah.",
     "peta": "https://www.google.com/maps/search/?api=1&query=2.8208772,101.5251832&query_place_id=ChIJ8QWQ6lm7zTERMtyEuu6K9zg"
   },
