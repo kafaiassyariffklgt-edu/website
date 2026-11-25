@@ -5,13 +5,32 @@
 .prayerbar__bar {
   display: flex;
   align-items: stretch;
+  justify-content: space-between;
   gap: 0;
   min-width: 0;
 }
 
 .prayerbar__bar .prayerbar__summary {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   min-width: 0;
+}
+
+.prayerbar__bar .prayerbar__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  max-width: 100%;
+  gap: clamp(0.65rem, 0.45rem + 0.55vw, 1rem);
+}
+
+.prayerbar__bar .prayerbar__next {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.prayerbar__bar .prayerbar__toggle-icon {
+  flex: 0 0 auto;
 }
 
 .sessionbar {
@@ -248,6 +267,10 @@
 }
 
 @media (max-width: 720px) {
+  .prayerbar__bar .prayerbar__next-meta {
+    justify-content: flex-start;
+  }
+
   .sessionbar__caret {
     width: 32px;
     height: 32px;
